@@ -98,5 +98,44 @@
     "fallback_text": "The member table will load here. If you can't see it, please",
     "fallback_link": "click here",
     "fallback_suffix": "to access directly."
+  },
+  "manifesto": {
+    "title": "Manifesto",
+    "main_title": "What are Digital Humanities and what are they for?",
+    "intro_paragraph1": "In Argentina, an open group of scholars, researchers, critics, librarians, students and stakeholders from different institutions and areas decided to consider together Digital Humanities (DH or HD) from the intersection between theory and practice, and from plurality and interdisciplinarity.",
+    "intro_paragraph2": "After our first meeting at the Mariano Moreno National Library on September 27th, 2013, we held an open call, and we met on November 22nd at the Faculty of Humanities of the National University of La Plata with the aim of establishing the Argentine Association of Digital Humanities (AAHD).",
+    "intro_paragraph3": "We believe that the HD are not a thematic discipline but a set of methodologies that cross our areas of interest. In fact, although digital technologies are nowadays present in the different stages of the research, regarding textual, discursive, symbolic and cultural productions (the search, diffusion, access and storage of information), DH foster overcoming this mere instrumental use.",
+    "intro_paragraph4": "It is only by fulfilling this goal that they will allow a new way of approaching objects and problems related to social and humanistic research to:",
+    "context_paragraph1": "We believe that the intrinsic incorporation of computer technologies into research processes in the field of Humanities leads to new methodologies, practices, resources, evidence, and questions for related disciplines, which require continuous investigation, training and updating. Due to this and despite our individual work and/or related to our production centers, we have decided to group ourselves in an association that will give us the opportunity to share resources, methods, training and results.",
+    "context_paragraph2": "There are different associations and networks in Digital Humanities in different cultural fields; in the Ibero-American sphere, we are preceded by the Spanish Association HDH ({link1}), RedHD in Mexico ({link2}), and AHDig in Brazil ({link3}), each with related profiles and objectives related to the particular development of certain academic disciplines in their countries or regions.",
+    "context_paragraph3": "In Argentina, several groups and people carry out their tasks within the assumptions and principles of the Digital Humanities. Those who attended the meeting in La Plata and Mariano Moreno National Library, and others previous meeting such as ThatCAMP Buenos Aires ({link4}), as well as those summoned by means of our website, have the will to express our intention to partner in order to establish an association of Digital Humanities in Argentina, based on the following incentives:",
+    "objectives_title": "Some of our core aims:",
+    "date": "November 22nd, 2013",
+    "hd_objectives": [
+      "pose new questions and ways to investigate pre-existing objects",
+      "review certain classical notions such as \"corpus\" or \"canon\"",
+      "consider a scale change regards to the objects to be investigated, both qualitatively and quantitatively",
+      "apply and look for new ways of reading and interpreting texts, offered by the digitalization of them",
+      "suggest new methods concerning conservation and access to intellectually significant information",
+      "observe and understand discursivities forms produced in the new digital media",
+      "consider epistemic and cognitive changes taking place both in the field of humanities and in the information and communication sciences"
+    ],
+    "motivations": [
+      "the impact of digital materiality and its resources in all areas of Humanities",
+      "the creation of new identities in the virtual world and their effects on teaching, learning and research in Humanities",
+      "the need of reflecting on cultural dynamics, construction of knowledge and the communication parameters of the Humanities in their transfer to the virtual",
+      "the understanding of the Digital Humanities as a crossing point between a scale change in information worldwide and its interpretation and practice in different countries"
+    ],
+    "aahd_objectives": [
+      "providing new approaches concerning information technologies and their use in specific disciplinary areas of the humanistic and social field",
+      "encouraging both studying and training in the field of Digital Humanities",
+      "boosting the development and assessment of new digital tools to preserve, analyze and make available digital resources disposable in our libraries, archives and museums",
+      "working together to introduce related contents in syllabi",
+      "promoting the exchange of scientific experiences among researchers, professors, critics, students and interested in the field of Digital Humanities",
+      "contributing to the dissemination and access of computer resources for research, teaching and criticism in social sciences and humanities",
+      "organizing meetings concerning research topics in Digital Humanities",
+      "constituting an observatory of practices with regards to the use of technologies for research in these areas",
+      "strengthening the community engagement in the research processes of Digital Humanities in our country, so that it can be taken as an example of collaborative work"
+    ]
   }
 }

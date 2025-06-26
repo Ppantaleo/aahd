@@ -98,5 +98,44 @@
     "fallback_text": "La tabla de miembros se cargará aquí. Si no puedes verla, por favor",
     "fallback_link": "haz clic aquí",
     "fallback_suffix": "para acceder directamente."
+  },
+  "manifesto": {
+    "title": "Manifiesto",
+    "main_title": "¿Qué son y para qué sirven las Humanidades Digitales?",
+    "intro_paragraph1": "En Argentina, un grupo abierto formado por docentes, investigadores, documentadores, críticos, estudiantes e interesados provenientes de diferentes instituciones y áreas decidimos pensar en conjunto las Humanidades Digitales desde un lugar de cruce entre la teoría y la práctica, y desde la pluralidad y la interdisciplinariedad.",
+    "intro_paragraph2": "Después de un primer encuentro, realizado a partir de una convocatoria abierta, el día viernes 27 de septiembre de 2013 en la Biblioteca Nacional Argentina, el viernes 22 de noviembre de este año nos reunimos en la Facultad de Humanidades de la Universidad Nacional de La Plata con el propósito de constituir una Asociación Argentina de Humanidades Digitales.",
+    "intro_paragraph3": "Coincidimos en que las Humanidades Digitales no constituyen una disciplina temática sino un conjunto de procedimientos que atraviesan nuestras áreas de interés. En efecto, si bien las tecnologías digitales se encuentran presentes hoy día en las diferentes etapas de los procesos de investigación acerca de producciones textuales, discursivas, simbólicas y culturales (la búsqueda, difusión, acceso y almacenamiento de información), las Humanidades Digitales plantean la superación de este simple uso instrumental.",
+    "intro_paragraph4": "Creemos que solo cumpliendo con este objetivo es que pueden permitir un nuevo modo abordaje sobre objetos y problemáticas relacionadas con la investigación humanística para:",
+    "context_paragraph1": "Entendemos que la incorporación intrínseca de las tecnologías informáticas a los procesos de investigación en el ámbito de las Humanidades da lugar a nuevas metodologías, prácticas, recursos, evidencias, y preguntas para las disciplinas afines que requieren de una indagación, formación y actualización continua. Es por ello que, más allá de nuestro trabajo individual y/o relacionado con nuestros centros de producción, hemos decidido agruparnos en una asociación que nos permita compartir recursos, métodos, formación y resultados.",
+    "context_paragraph2": "Existen en distintos ámbitos culturales diversas asociaciones y redes en Humanidades Digitales; en el ámbito iberoamericano nos preceden la asociación española HDH-Humanidades Digitales Hispánicas ({link1}), la RedHD de México ({link2}) y la AHDig en Brasil ({link3}), cada una de ellas con un perfil y unos objetivos afines y otros relacionados con el desarrollo particular de ciertas disciplinas académicas de sus países o región.",
+    "context_paragraph3": "En Argentina varios grupos y personas desarrollan su actividad dentro de los supuestos y principios de las Humanidades Digitales. Los presentes en el encuentro de La Plata y la Biblioteca Nacional Argentina, y en los otros organizados previamente como el ThatCAMP Buenos Aires ({link4}), así como los convocados a través de la página web aahd.com.ar, manifiestamos aquí nuestra intención de asociarnos para constituir una asociación de Humanidades Digitales en Argentina, a partir de las siguientes motivaciones:",
+    "objectives_title": "Entre nuestros objetivos se encuentran:",
+    "date": "22 de noviembre de 2013",
+    "hd_objectives": [
+      "formular nuevas preguntas y maneras de indagar objetos preexistentes",
+      "revisar ciertas nociones clásicas como las de \"corpus\" o \"canon\"",
+      "considerar un cambio de escala para los objetos a investigar, tanto en lo cualitativo como en lo cuantitativo",
+      "postular e indagar acerca nuevas formas de lectura e interpretación posibilitadas por la digitalización de textos",
+      "proponer nuevos métodos de conservación y acceso a información culturalmente significativa",
+      "observar y comprender las discursividades producidas en los nuevos medios digitales",
+      "considerar los cambios epistémicos y cognitivos en el ámbito de las humanidades y las ciencias de la información y la comunicación"
+    ],
+    "motivations": [
+      "el impacto de la materialidad digital y sus herramientas en todos los ámbitos de las Humanidades",
+      "la creación de nuevas identidades en el medio virtual y su proyección en la docencia, el aprendizaje y la investigación en Humanidades",
+      "la necesidad de reflexionar acerca de las dinámicas culturales, la construcción del conocimiento y los parámetros de comunicación de las Humanidades en su trasvase a lo virtual",
+      "la comprensión de las Humanidades Digitales como lugar de cruce entre un cambio de escala de la información a nivel mundial y su interpretación y práctica en distintos países"
+    ],
+    "aahd_objectives": [
+      "aportar nuevos enfoques sobre las tecnologías de la información y su uso en áreas disciplinares específicas del campo humanístico y social",
+      "fomentar el estudio y la formación en el campo de las Humanidades Digitales",
+      "impulsar el desarrollo y evaluación de nuevas herramientas digitales para preservar, analizar y poner a disposición recursos digitales accesibles en nuestras bibliotecas, archivos y museos",
+      "trabajar conjuntamente para introducir contenidos afines en los programas educativos de todos los niveles",
+      "promover el intercambio de experiencias de carácter científico entre investigadores, docentes, críticos, estudiantes e interesados en el campo de las Humanidades Digitales",
+      "contribuir a la difusión y al acceso de recursos informáticos para la investigación, docencia y crítica en ciencias sociales y humanidades",
+      "organizar encuentros sobre temas de investigación en Humanidades Digitales",
+      "constituir un observatorio de prácticas en el uso de las tecnologías para la investigación en esas áreas",
+      "fortalecer la comunidad de investigación en Humanidades Digitales en nuestro país, obrando como un ejemplo modélico de trabajo colaborativo"
+    ]
   }
 }
