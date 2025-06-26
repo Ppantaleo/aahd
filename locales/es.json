@@ -152,5 +152,171 @@
     "memberships_title": "Para membresías:",
     "events_title": "Para eventos:",
     "collaborations_title": "Para colaboraciones:"
+  },
+  "about": {
+    "title": "Quienes somos",
+    "description1": "La Asociación Argentina de Humanidades Digitales, fundada en 2013 en Buenos Aires, Argentina, es una comunidad de práctica abierta cuyo propósito esencial es promover la investigación, transmisión y difusión del conocimiento en el campo de las Humanidades Digitales fomentando, desde un lugar de cruce entre la teoría y la práctica y desde la pluralidad y la interdisciplinariedad, el intercambio de ideas, métodos y enfoques practicados por sus miembros: docentes, investigadorxs, documentadorxs, bibliotecarixs, críticxs, estudiantes e interesadxs provenientes de diferentes instituciones y áreas.",
+    "description2": "Las Humanidades Digitales no constituyen una disciplina temática sino un conjunto de procedimientos que atraviesan nuestras áreas de interés.",
+    "description3": "En efecto, si bien las tecnologías digitales se encuentran presentes hoy día en las diferentes etapas de los procesos de investigación acerca de producciones textuales, discursivas, simbólicas y culturales (la búsqueda, difusión, acceso y almacenamiento de información), las Humanidades Digitales plantean la superación de este simple uso instrumental.",
+    "description4": "Creemos que solo cumpliendo con este objetivo es que pueden permitir un nuevo abordaje sobre objetos y problemáticas relacionadas con la investigación social y humanística en nuestro país.",
+    "objectives_title": "Nuestros Objetivos",
+    "objectives_intro": "Entre nuestros objetivos se encuentran:",
+    "coordination_title": "Coordinación de la AAHD",
+    "coordination": [
+      { "position": "Presidenta", "name": "Gimena del Rio Riande", "institution": "CONICET" },
+      { "position": "Vicepresidenta", "name": "Virginia Brussa", "institution": "UNR" },
+      { "position": "Secretaría", "name": "Romina De León", "institution": "CONICET" },
+      { "position": "Vocal 1", "name": "Lucía Cantamutto", "institution": "UNRN" },
+      { "position": "Vocal 2", "name": "María Bernarda Torres", "institution": "UNCo" },
+      { "position": "Vocal 3", "name": "Carlos Nusch", "institution": "UNLP" },
+      { "position": "Vocal 4", "name": "Marisol Fila", "institution": "UBA /UMICH" },
+      { "position": "Vocal 5", "name": "Andrés Olaizola", "institution": "CONICET" }
+    ],
+    "additional_team": [
+      { "position": "Difusión", "name": "Nicolás Lázaro", "institution": "UCSF" },
+      { "position": "Web Manager", "name": "Patricio Pantaleo", "institution": "Universidad Nacional de Córdoba" }
+    ],
+    "objectives": [
+      "aportar nuevos enfoques sobre las tecnologías de la información y su uso en áreas disciplinares específicas del campo humanístico y social",
+      "fomentar el estudio y la formación en el campo de las Humanidades Digitales",
+      "impulsar el desarrollo y evaluación de nuevas herramientas digitales para preservar, analizar y poner a disposición recursos digitales accesibles en nuestras bibliotecas, archivos y museos",
+      "trabajar conjuntamente para introducir contenidos afines en los programas educativos de todos los niveles",
+      "promover el intercambio de experiencias de carácter científico entre investigadores, docentes, críticos, estudiantes e interesados en el campo de las Humanidades Digitales",
+      "contribuir a la difusión y al acceso de recursos informáticos para la investigación, docencia y crítica en ciencias sociales y humanidades",
+      "organizar encuentros sobre temas de investigación en Humanidades",
+      "constituir un observatorio de prácticas en el uso de las tecnologías para la investigación en esas áreas",
+      "fortalecer la comunidad de investigación en Humanidades Digitales en nuestro país, obrando como un ejemplo modélico de trabajo colaborativo"
+    ]
+  },
+
+  "bits": {
+    "title": "Bits",
+    "description": "Recursos prácticos, herramientas, tutoriales y fragmentos de código para potenciar tus proyectos de humanidades digitales.",
+    "categories": ["Todos", "Tutorial", "Recurso", "Herramienta", "Guía", "Código", "Plantilla"],
+    "access": "Acceder",
+    "contribute_title": "Contribuye",
+    "contribute_description": "¿Tienes herramientas, tutoriales o recursos que podrían ser útiles para la comunidad?",
+    "contribute_button": "Comparte tu recurso",
+    "bits": [
+      {
+        "title": "Tutorial: Análisis de sentimientos con Python",
+        "category": "Tutorial",
+        "date": "2024-01-18",
+        "description": "Guía paso a paso para implementar análisis de sentimientos en textos históricos usando Python y NLTK.",
+        "url": "#"
+      },
+      {
+        "title": "Base de datos de manuscritos coloniales",
+        "category": "Recurso",
+        "date": "2024-01-10",
+        "description": "Acceso a una base de datos digitalizada de manuscritos del período colonial argentino.",
+        "url": "#"
+      },
+      {
+        "title": "Paleta de colores para visualizaciones históricas",
+        "category": "Herramienta",
+        "date": "2023-12-28",
+        "description": "Conjunto de paletas de colores diseñadas específicamente para visualizaciones de datos históricos.",
+        "url": "#"
+      },
+      {
+        "title": "Guía de buenas prácticas en digitalización",
+        "category": "Guía",
+        "date": "2023-12-15",
+        "description": "Recomendaciones para la digitalización de documentos y archivos históricos.",
+        "url": "#"
+      },
+      {
+        "title": "Script para limpieza de datos OCR",
+        "category": "Código",
+        "date": "2023-12-02",
+        "description": "Herramienta automatizada para limpiar y corregir errores comunes en textos procesados con OCR.",
+        "url": "#"
+      },
+      {
+        "title": "Plantillas para mapas interactivos",
+        "category": "Plantilla",
+        "date": "2023-11-18",
+        "description": "Plantillas HTML/CSS/JS para crear mapas interactivos de eventos históricos.",
+        "url": "#"
+      }
+    ]
+  },
+
+  "podcast": {
+    "title": "Podcast",
+    "main_question": "¿Querés saber quiénes están haciendo Humanidades Digitales y cómo lo están haciendo?",
+    "description": "Escuchá nuestro podcast desde esta página o en nuestros canales de Spotify, Soundcloud, Google podcasts y YouTube.",
+    "credits_title": "Créditos",
+    "intro_outro_music": "Música intro y outro",
+    "intro_outro_credit": "Molecular, de Gabriel Calarco",
+    "narration": "Locución",
+    "narration_credit": "Mariano Vilar",
+    "listen_title": "Escuchar Podcast",
+    "fallback_text": "El reproductor de podcast se cargará aquí. Si no puedes verlo, por favor",
+    "fallback_link": "haz clic aquí",
+    "fallback_suffix": "para acceder directamente en Spotify.",
+    "platforms": [
+      { "name": "Spotify", "url": "https://creators.spotify.com/pod/profile/asociacin-argentina-de-humanidades-digitales/" },
+      { "name": "SoundCloud", "url": "#" },
+      { "name": "Google Podcasts", "url": "#" },
+      { "name": "YouTube", "url": "#" }
+    ]
+  },
+
+  "publications": {
+    "title": "Publicaciones",
+    "subtitle": "Actas, revistas, libros de la AAHD",
+    "description1": "La AAHD viene publicando todos los resultados de sus congresos y encuentros mediante libros de actas con atribución de ISBN o ISSN y el depósito de trabajos y presentaciones en Zenodo.",
+    "description2": "Adicionalmente, también hemos comenzado a publicar nuestra propia revista académica sobre Humanidades Digitales, Publicaciones de la AAHD.",
+    "description3": "Conocé y accedé a nuestras publicaciones o envianos tu trabajo para las PublicAAHD a continuación.",
+    "access": "Acceder",
+    "isbn": "ISBN:",
+    "cta_title": "¿Tienes un trabajo para publicar?",
+    "cta_description": "Envíanos tu trabajo para las PublicAAHD y forma parte de nuestra revista académica.",
+    "cta_button": "Enviar propuesta",
+    "publications": [
+      {
+        "type": "Revista de investigación",
+        "title": "PublicAAHD",
+        "subtitle": "Publicaciones de la Asociación Argentina de Humanidades Digitales",
+        "url": "https://revistas.unlp.edu.ar/publicaahd/",
+        "description": "Revista académica sobre Humanidades Digitales",
+        "isJournal": true
+      },
+      {
+        "type": "Actas de Congreso",
+        "title": "La Cultura de los Datos",
+        "subtitle": "III Congreso Internacional de la AAHD",
+        "organization": "Asociación Argentina de Humanidades Digitales",
+        "date": "7 al 9 de noviembre de 2018",
+        "location": "Rosario, Argentina",
+        "isbn": "978-950-34-1840-6",
+        "url": "#",
+        "isJournal": false
+      },
+      {
+        "type": "Actas de Congreso",
+        "title": "Construcciones locales en contextos globales",
+        "subtitle": "Congreso Internacional de Humanidades Digitales",
+        "organization": "Asociación Argentina de Humanidades Digitales",
+        "date": "7 al 9 de noviembre de 2016",
+        "location": "Buenos Aires, Argentina",
+        "isbn": "978-987-4019-97-4",
+        "url": "#",
+        "isJournal": false
+      },
+      {
+        "type": "Actas de Jornadas",
+        "title": "Culturas, tecnologías, saberes",
+        "subtitle": "I Jornadas Nacionales de Humanidades Digitales",
+        "organization": "Asociación Argentina de Humanidades Digitales",
+        "date": "17 al 19 de noviembre de 2014",
+        "location": "Buenos Aires, Argentina",
+        "isbn": "978-987-3617-89-8",
+        "url": "#",
+        "isJournal": false
+      }
+    ]
   }
 }

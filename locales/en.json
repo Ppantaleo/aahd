@@ -152,5 +152,171 @@
     "memberships_title": "For memberships:",
     "events_title": "For events:",
     "collaborations_title": "For collaborations:"
+  },
+  "about": {
+    "title": "Who we are",
+    "description1": "The Argentine Association of Digital Humanities, founded in 2013 in Buenos Aires, Argentina, is an open community of practice whose essential purpose is to promote research, transmission and dissemination of knowledge in the field of Digital Humanities, fostering, from a place of intersection between theory and practice and from plurality and interdisciplinarity, the exchange of ideas, methods and approaches practiced by its members: teachers, researchers, documentarians, librarians, critics, students and interested parties from different institutions and areas.",
+    "description2": "Digital Humanities do not constitute a thematic discipline but rather a set of procedures that cross our areas of interest.",
+    "description3": "Indeed, although digital technologies are present today in the different stages of research processes about textual, discursive, symbolic and cultural productions (search, dissemination, access and storage of information), Digital Humanities propose overcoming this simple instrumental use.",
+    "description4": "We believe that only by fulfilling this objective can they allow a new approach to objects and problems related to social and humanistic research in our country.",
+    "objectives_title": "Our Objectives",
+    "objectives_intro": "Among our objectives are:",
+    "coordination_title": "AAHD Coordination",
+    "coordination": [
+      { "position": "President", "name": "Gimena del Rio Riande", "institution": "CONICET" },
+      { "position": "Vice President", "name": "Virginia Brussa", "institution": "UNR" },
+      { "position": "Secretary", "name": "Romina De León", "institution": "CONICET" },
+      { "position": "Board Member 1", "name": "Lucía Cantamutto", "institution": "UNRN" },
+      { "position": "Board Member 2", "name": "María Bernarda Torres", "institution": "UNCo" },
+      { "position": "Board Member 3", "name": "Carlos Nusch", "institution": "UNLP" },
+      { "position": "Board Member 4", "name": "Marisol Fila", "institution": "UBA /UMICH" },
+      { "position": "Board Member 5", "name": "Andrés Olaizola", "institution": "CONICET" }
+    ],
+    "additional_team": [
+      { "position": "Outreach", "name": "Nicolás Lázaro", "institution": "UCSF" },
+      { "position": "Web Manager", "name": "Patricio Pantaleo", "institution": "Universidad Nacional de Córdoba" }
+    ],
+    "objectives": [
+      "provide new approaches to information technologies and their use in specific disciplinary areas of the humanistic and social field",
+      "encourage study and training in the field of Digital Humanities",
+      "promote the development and evaluation of new digital tools to preserve, analyze and make available accessible digital resources in our libraries, archives and museums",
+      "work together to introduce related content in educational programs at all levels",
+      "promote the exchange of scientific experiences among researchers, teachers, critics, students and interested parties in the field of Digital Humanities",
+      "contribute to the dissemination and access of computer resources for research, teaching and criticism in social sciences and humanities",
+      "organize meetings on research topics in Digital Humanities",
+      "constitute an observatory of practices in the use of technologies for research in these areas",
+      "strengthen the research community in Digital Humanities in our country, acting as a model example of collaborative work"
+    ]
+  },
+
+  "bits": {
+    "title": "Bits",
+    "description": "Practical resources, tools, tutorials and code snippets to boost your digital humanities projects.",
+    "categories": ["All", "Tutorial", "Resource", "Tool", "Guide", "Code", "Template"],
+    "access": "Access",
+    "contribute_title": "Contribute",
+    "contribute_description": "Do you have tools, tutorials or resources that could be useful for the community?",
+    "contribute_button": "Share your resource",
+    "bits": [
+      {
+        "title": "Tutorial: Sentiment Analysis with Python",
+        "category": "Tutorial",
+        "date": "2024-01-18",
+        "description": "Step-by-step guide to implement sentiment analysis on historical texts using Python and NLTK.",
+        "url": "#"
+      },
+      {
+        "title": "Colonial Manuscripts Database",
+        "category": "Resource",
+        "date": "2024-01-10",
+        "description": "Access to a digitized database of manuscripts from the Argentine colonial period.",
+        "url": "#"
+      },
+      {
+        "title": "Color Palette for Historical Visualizations",
+        "category": "Tool",
+        "date": "2023-12-28",
+        "description": "Set of color palettes specifically designed for historical data visualizations.",
+        "url": "#"
+      },
+      {
+        "title": "Best Practices Guide for Digitization",
+        "category": "Guide",
+        "date": "2023-12-15",
+        "description": "Recommendations for digitizing historical documents and archives.",
+        "url": "#"
+      },
+      {
+        "title": "OCR Data Cleaning Script",
+        "category": "Code",
+        "date": "2023-12-02",
+        "description": "Automated tool to clean and correct common errors in OCR-processed texts.",
+        "url": "#"
+      },
+      {
+        "title": "Interactive Map Templates",
+        "category": "Template",
+        "date": "2023-11-18",
+        "description": "HTML/CSS/JS templates to create interactive maps of historical events.",
+        "url": "#"
+      }
+    ]
+  },
+
+  "podcast": {
+    "title": "Podcast",
+    "main_question": "Want to know who's doing Digital Humanities and how they're doing it?",
+    "description": "Listen to our podcast from this page or on our Spotify, Soundcloud, Google podcasts and YouTube channels.",
+    "credits_title": "Credits",
+    "intro_outro_music": "Intro and outro music",
+    "intro_outro_credit": "Molecular, by Gabriel Calarco",
+    "narration": "Narration",
+    "narration_credit": "Mariano Vilar",
+    "listen_title": "Listen to Podcast",
+    "fallback_text": "The podcast player will load here. If you can't see it, please",
+    "fallback_link": "click here",
+    "fallback_suffix": "to access directly on Spotify.",
+    "platforms": [
+      { "name": "Spotify", "url": "https://creators.spotify.com/pod/profile/asociacin-argentina-de-humanidades-digitales/" },
+      { "name": "SoundCloud", "url": "#" },
+      { "name": "Google Podcasts", "url": "#" },
+      { "name": "YouTube", "url": "#" }
+    ]
+  },
+
+  "publications": {
+    "title": "Publications",
+    "subtitle": "Proceedings, journals, books by AAHD",
+    "description1": "AAHD has been publishing all the results of its congresses and meetings through proceedings books with ISBN or ISSN attribution and the deposit of papers and presentations in Zenodo.",
+    "description2": "Additionally, we have also begun publishing our own academic journal on Digital Humanities, Publications of AAHD.",
+    "description3": "Get to know and access our publications or send us your work for PublicAAHD below.",
+    "access": "Access",
+    "isbn": "ISBN:",
+    "cta_title": "Do you have work to publish?",
+    "cta_description": "Send us your work for PublicAAHD and become part of our academic journal.",
+    "cta_button": "Send proposal",
+    "publications": [
+      {
+        "type": "Research Journal",
+        "title": "PublicAAHD",
+        "subtitle": "Publications of the Argentine Association of Digital Humanities",
+        "url": "https://revistas.unlp.edu.ar/publicaahd/",
+        "description": "Academic journal on Digital Humanities",
+        "isJournal": true
+      },
+      {
+        "type": "Conference Proceedings",
+        "title": "The Culture of Data",
+        "subtitle": "III International Congress of AAHD",
+        "organization": "Argentine Association of Digital Humanities",
+        "date": "November 7-9, 2018",
+        "location": "Rosario, Argentina",
+        "isbn": "978-950-34-1840-6",
+        "url": "#",
+        "isJournal": false
+      },
+      {
+        "type": "Conference Proceedings",
+        "title": "Local Constructions in Global Contexts",
+        "subtitle": "International Congress of Digital Humanities",
+        "organization": "Argentine Association of Digital Humanities",
+        "date": "November 7-9, 2016",
+        "location": "Buenos Aires, Argentina",
+        "isbn": "978-987-4019-97-4",
+        "url": "#",
+        "isJournal": false
+      },
+      {
+        "type": "Workshop Proceedings",
+        "title": "Cultures, Technologies, Knowledge",
+        "subtitle": "I National Workshop on Digital Humanities",
+        "organization": "Argentine Association of Digital Humanities",
+        "date": "November 17-19, 2014",
+        "location": "Buenos Aires, Argentina",
+        "isbn": "978-987-3617-89-8",
+        "url": "#",
+        "isJournal": false
+      }
+    ]
   }
 }
