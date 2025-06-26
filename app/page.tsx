@@ -107,7 +107,8 @@ export default function HomePage() {
             className="object-cover"
             priority
           />
-          <div className="absolute inset-0 bg-cyan-500/20"></div>
+          <div className="absolute inset-0 bg-black/50"></div>
+          <div className="absolute inset-0 bg-cyan-500/10"></div>
         </div>
 
         <div className="relative z-10 text-center text-white max-w-4xl mx-auto px-4">

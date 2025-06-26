@@ -26,17 +26,8 @@ export default function Header() {
             />
           </Link>
 
-          {/* Mobile menu button */}
-          <button
-            className="md:hidden text-white hover:text-cyan-300 transition-colors"
-            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            aria-label="Toggle mobile menu"
-          >
-            {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-          </button>
-
-          {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center space-x-6">
+          {/* Desktop Navigation - Hidden on mobile */}
+          <nav className="hidden md:flex items-center space-x-6 flex-1 justify-center">
             <Link href="/about" className="hover:text-cyan-300 transition-colors">
               {t.nav.about}
             </Link>
@@ -57,13 +48,10 @@ export default function Header() {
             </Link>
           </nav>
 
-          {/* Language Switcher and Social Icons */}
-          <div className="flex items-center space-x-4">
-            <div className="hidden md:block">
-              <LanguageSwitcher />
-            </div>
-
-            <div className="hidden md:flex items-center space-x-2">
+          {/* Language Switcher and Social Icons - Desktop */}
+          <div className="hidden md:flex items-center space-x-4">
+            <LanguageSwitcher />
+            <div className="flex items-center space-x-2">
               <Link
                 href="#"
                 className="w-8 h-8 bg-cyan-500 rounded-full flex items-center justify-center hover:bg-cyan-600 transition-colors"
@@ -90,6 +78,15 @@ export default function Header() {
               </Link>
             </div>
           </div>
+
+          {/* Mobile menu button */}
+          <button
+            className="md:hidden text-white hover:text-cyan-300 transition-colors ml-auto"
+            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            aria-label="Toggle mobile menu"
+          >
+            {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+          </button>
         </div>
       </div>
 
