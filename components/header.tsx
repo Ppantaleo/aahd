@@ -53,25 +53,25 @@ export default function Header() {
             <LanguageSwitcher />
             <div className="flex items-center space-x-2">
               <Link
-                href="#"
+                href="http://twitter.com/aahdArg"
                 className="w-8 h-8 bg-cyan-500 rounded-full flex items-center justify-center hover:bg-cyan-600 transition-colors"
               >
                 <Twitter className="w-4 h-4" />
               </Link>
               <Link
-                href="#"
+                href="https://www.facebook.com/aahdArg/"
                 className="w-8 h-8 bg-cyan-500 rounded-full flex items-center justify-center hover:bg-cyan-600 transition-colors"
               >
                 <Facebook className="w-4 h-4" />
               </Link>
               <Link
-                href="#"
+                href="https://www.youtube.com/channel/UCVw7jhPkN0URG92Abnvs5MA"
                 className="w-8 h-8 bg-cyan-500 rounded-full flex items-center justify-center hover:bg-cyan-600 transition-colors"
               >
                 <Youtube className="w-4 h-4" />
               </Link>
               <Link
-                href="#"
+                href="https://www.instagram.com/humanidadesdigitalesargentina/"
                 className="w-8 h-8 bg-cyan-500 rounded-full flex items-center justify-center hover:bg-cyan-600 transition-colors"
               >
                 <Instagram className="w-4 h-4" />
@@ -146,25 +146,25 @@ export default function Header() {
               {/* Mobile Social Icons */}
               <div className="flex items-center space-x-3 pt-4 border-t border-slate-600">
                 <Link
-                  href="#"
+                  href="http://twitter.com/aahdArg"
                   className="w-8 h-8 bg-cyan-500 rounded-full flex items-center justify-center hover:bg-cyan-600 transition-colors"
                 >
                   <Twitter className="w-4 h-4" />
                 </Link>
                 <Link
-                  href="#"
+                  href="https://www.facebook.com/aahdArg/"
                   className="w-8 h-8 bg-cyan-500 rounded-full flex items-center justify-center hover:bg-cyan-600 transition-colors"
                 >
                   <Facebook className="w-4 h-4" />
                 </Link>
                 <Link
-                  href="#"
+                  href="https://www.youtube.com/channel/UCVw7jhPkN0URG92Abnvs5MA"
                   className="w-8 h-8 bg-cyan-500 rounded-full flex items-center justify-center hover:bg-cyan-600 transition-colors"
                 >
                   <Youtube className="w-4 h-4" />
                 </Link>
                 <Link
-                  href="#"
+                  href="https://www.instagram.com/humanidadesdigitalesargentina/"
                   className="w-8 h-8 bg-cyan-500 rounded-full flex items-center justify-center hover:bg-cyan-600 transition-colors"
                 >
                   <Instagram className="w-4 h-4" />
