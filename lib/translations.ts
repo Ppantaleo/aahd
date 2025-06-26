@@ -1,6 +1,6 @@
 "use client"
 
-import { createContext, useContext, useState, useEffect, ReactNode } from "react"
+import React from "react"
 import es from "../locales/es.json"
 import en from "../locales/en.json"
 
@@ -16,12 +16,16 @@ type TranslationContextType = {
   t: typeof es
 }
 
-const TranslationContext = createContext<TranslationContextType | null>(null)
+const TranslationContext = React.createContext<TranslationContextType | null>(null)
 
-export function TranslationProvider({ children }: { children: ReactNode }) {
-  const [locale, setLocaleState] = useState<Locale>('es')
+interface TranslationProviderProps {
+  children: React.ReactNode
+}
 
-  useEffect(() => {
+export function TranslationProvider({ children }: TranslationProviderProps) {
+  const [locale, setLocaleState] = React.useState<Locale>('es')
+
+  React.useEffect(() => {
     // Cargar idioma guardado en localStorage
     const savedLocale = localStorage.getItem('locale') as Locale
     if (savedLocale && (savedLocale === 'es' || savedLocale === 'en')) {
@@ -36,15 +40,21 @@ export function TranslationProvider({ children }: { children: ReactNode }) {
 
   const t = translations[locale] || translations.es
 
-  return (
-    <TranslationContext.Provider value={{ locale, setLocale, t }}>
-      {children}
-    </TranslationContext.Provider>
+  const value = React.useMemo(() => ({
+    locale,
+    setLocale,
+    t
+  }), [locale, t])
+
+  return React.createElement(
+    TranslationContext.Provider,
+    { value },
+    children
   )
 }
 
 export function useTranslations() {
-  const context = useContext(TranslationContext)
+  const context = React.useContext(TranslationContext)
   if (!context) {
     throw new Error('useTranslations must be used within a TranslationProvider')
   }
