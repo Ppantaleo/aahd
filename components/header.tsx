@@ -4,9 +4,12 @@ import Link from "next/link"
 import { Facebook, Twitter, Youtube, Instagram, Menu, X } from "lucide-react"
 import Image from "next/image"
 import { useState } from "react"
+import { useTranslations } from "@/lib/translations"
+import LanguageSwitcher from "./language-switcher"
 
 export default function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
+  const { t } = useTranslations()
 
   return (
     <header className="bg-slate-700 text-white">
@@ -14,7 +17,13 @@ export default function Header() {
         <div className="flex items-center justify-between py-4">
           {/* Logo */}
           <Link href="/" className="flex items-center">
-            <Image src="/aahd/images/logo-aahd.jpg" alt="AAHD Logo" width={50} height={50} className="rounded-full mr-3" />
+            <Image
+              src="/aahd/images/logo-aahd.jpg"
+              alt="AAHD Logo"
+              width={50}
+              height={50}
+              className="rounded-full mr-3"
+            />
           </Link>
 
           {/* Mobile menu button */}
@@ -29,27 +38,31 @@ export default function Header() {
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-6">
             <Link href="/about" className="hover:text-cyan-300 transition-colors">
-              Sobre AAHD
+              {t.nav.about}
             </Link>
             <Link href="/comunidad" className="hover:text-cyan-300 transition-colors">
-              Comunidad
+              {t.nav.community}
             </Link>
             <Link href="/manifiesto" className="hover:text-cyan-300 transition-colors">
-              Manifiesto
+              {t.nav.manifesto}
             </Link>
             <Link href="/publicaciones" className="hover:text-cyan-300 transition-colors">
-              Publicaciones
+              {t.nav.publications}
             </Link>
             <Link href="/podcast" className="hover:text-cyan-300 transition-colors">
-              Podcast
+              {t.nav.podcast}
             </Link>
             <Link href="/bits" className="hover:text-cyan-300 transition-colors">
-              Bits
+              {t.nav.bits}
             </Link>
           </nav>
 
-          {/* Social Icons and Login */}
+          {/* Language Switcher and Social Icons */}
           <div className="flex items-center space-x-4">
+            <div className="hidden md:block">
+              <LanguageSwitcher />
+            </div>
+
             <div className="hidden md:flex items-center space-x-2">
               <Link
                 href="#"
@@ -76,11 +89,6 @@ export default function Header() {
                 <Instagram className="w-4 h-4" />
               </Link>
             </div>
-            {/* Login button commented out - no longer used
-            <Button variant="outline" size="sm" className="bg-white text-slate-700 hover:bg-gray-100">
-              Log in | Registro
-            </Button>
-            */}
           </div>
         </div>
       </div>
@@ -95,43 +103,48 @@ export default function Header() {
                 className="text-white hover:text-cyan-300 transition-colors py-2"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
-                Sobre AAHD
+                {t.nav.about}
               </Link>
               <Link
                 href="/comunidad"
                 className="text-white hover:text-cyan-300 transition-colors py-2"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
-                Comunidad
+                {t.nav.community}
               </Link>
               <Link
                 href="/manifiesto"
                 className="text-white hover:text-cyan-300 transition-colors py-2"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
-                Manifiesto
+                {t.nav.manifesto}
               </Link>
               <Link
                 href="/publicaciones"
                 className="text-white hover:text-cyan-300 transition-colors py-2"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
-                Publicaciones
+                {t.nav.publications}
               </Link>
               <Link
                 href="/podcast"
                 className="text-white hover:text-cyan-300 transition-colors py-2"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
-                Podcast
+                {t.nav.podcast}
               </Link>
               <Link
                 href="/bits"
                 className="text-white hover:text-cyan-300 transition-colors py-2"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
-                Bits
+                {t.nav.bits}
               </Link>
+
+              {/* Mobile Language Switcher */}
+              <div className="pt-4 border-t border-slate-600">
+                <LanguageSwitcher />
+              </div>
 
               {/* Mobile Social Icons */}
               <div className="flex items-center space-x-3 pt-4 border-t border-slate-600">

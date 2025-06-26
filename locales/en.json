@@ -1,0 +1,91 @@
+{
+  "nav": {
+    "about": "About AAHD",
+    "community": "Community",
+    "manifesto": "Manifesto",
+    "publications": "Publications",
+    "podcast": "Podcast",
+    "bits": "Bits",
+    "contact": "Contact"
+  },
+  "home": {
+    "title": "Argentine Association of Digital Humanities",
+    "cta": "Get to know us",
+    "about": {
+      "title": "About AAHD",
+      "description1": "The Argentine Association of Digital Humanities (AAHD) is an open community of practice whose objective is to promote research, transmission and dissemination of knowledge in the field of Digital Humanities, building bridges between different disciplines and lines of research.",
+      "description2": "Digital Humanities do not constitute a thematic discipline but rather a set of procedures that cross our areas of interest.",
+      "description3": "Indeed, although digital technologies are present today in the different stages of research processes about textual, discursive, symbolic and cultural productions (search, dissemination, access and storage of information), Digital Humanities propose overcoming this simple instrumental use.",
+      "cta": "Learn more about AAHD"
+    },
+    "stats": {
+      "title": "AAHD in numbers",
+      "years": "Years of community",
+      "participants": "Participants",
+      "events": "Events and conferences",
+      "publications": "Publications"
+    },
+    "pillars": {
+      "title": "Digital Humanities",
+      "digital_turn": {
+        "title": "Digital Turn",
+        "description": "We are interested in reflecting on the impact of digitization on Humanities research and teaching."
+      },
+      "data": {
+        "title": "Data",
+        "description": "Data as culture, the culture of data, and contextualized data for proper understanding."
+      },
+      "collaboration": {
+        "title": "Collaboration",
+        "description": "We are a community of practice that explores new forms of work and collaboration in the Humanities."
+      },
+      "humanities": {
+        "title": "Humanities",
+        "description": "Our starting point for thinking and doing research with digital media are the Human Sciences."
+      },
+      "open": {
+        "title": "Open",
+        "description": "We are challenged by new ways of doing research with open data and methodologies."
+      },
+      "processes": {
+        "title": "Processes",
+        "description": "We seek to identify, document and give greater visibility to processes, not just research results."
+      }
+    },
+    "twitter": {
+      "title": "Tweets by aahdArg",
+      "description": "Follow us on Twitter for the latest news",
+      "cta": "Follow @aahdArg"
+    },
+    "activities": {
+      "title": "Our Activities",
+      "facebook": {
+        "title": "Facebook Group",
+        "description": "Open news and information group."
+      },
+      "zenodo": {
+        "title": "Zenodo Repository",
+        "description": "Open access articles and writings."
+      },
+      "mailing": {
+        "title": "Mailing List",
+        "description": "Receive all the news by email."
+      },
+      "wiki": {
+        "title": "Tools Wiki",
+        "description": "Explore Digital Humanities tools"
+      },
+      "youtube": {
+        "title": "YouTube Channel",
+        "description": "Podcast, events and more."
+      },
+      "access": "Access"
+    }
+  },
+  "footer": {
+    "navigation": "Navigation",
+    "resources": "Resources",
+    "follow": "Follow us",
+    "copyright": "Argentine Association of Digital Humanities. All rights reserved."
+  }
+}

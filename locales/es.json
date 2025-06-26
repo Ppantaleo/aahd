@@ -1,0 +1,91 @@
+{
+  "nav": {
+    "about": "Sobre AAHD",
+    "community": "Comunidad",
+    "manifesto": "Manifiesto",
+    "publications": "Publicaciones",
+    "podcast": "Podcast",
+    "bits": "Bits",
+    "contact": "Contacto"
+  },
+  "home": {
+    "title": "Asociación Argentina de Humanidades Digitales",
+    "cta": "Conocenos",
+    "about": {
+      "title": "Sobre la AAHD",
+      "description1": "La Asociación Argentina de Humanidades Digitales (AAHD) es una comunidad de práctica abierta cuyo objetivo es promover la investigación, transmisión y difusión del conocimiento en el campo de las Humanidades Digitales, tendiendo puentes entre distintas disciplinas y líneas de investigación.",
+      "description2": "Las Humanidades Digitales no constituyen una disciplina temática sino un conjunto de procedimientos que atraviesan nuestras áreas de interés.",
+      "description3": "En efecto, si bien las tecnologías digitales se encuentran presentes hoy día en las diferentes etapas de los procesos de investigación acerca de producciones textuales, discursivas, simbólicas y culturales (la búsqueda, difusión, acceso y almacenamiento de información), las Humanidades Digitales plantean la superación de este simple uso instrumental.",
+      "cta": "Conocé más sobre AAHD"
+    },
+    "stats": {
+      "title": "La AAHD en números",
+      "years": "Años de la comunidad",
+      "participants": "Participantes",
+      "events": "Eventos y congresos",
+      "publications": "Publicaciones"
+    },
+    "pillars": {
+      "title": "Humanidades Digitales",
+      "digital_turn": {
+        "title": "Giro Digital",
+        "description": "Nos interesa reflexionar en el impacto de la digitalización en la investigación y enseñanza de las Humanidades."
+      },
+      "data": {
+        "title": "Datos",
+        "description": "Los datos como cultura, la cultura de los datos, y los datos contextualizados para su correcta comprensión."
+      },
+      "collaboration": {
+        "title": "Colaboración",
+        "description": "Somos una comunidad de práctica que explora las nuevas formas de trabajo y colaboración en las Humanidades."
+      },
+      "humanities": {
+        "title": "Humanidades",
+        "description": "Nuestro punto de partida para pensar y hacer investigación con medios digitales son las Ciencias Humanas."
+      },
+      "open": {
+        "title": "Abierto",
+        "description": "Nos interpelan las nuevas formas de hacer investigación con datos y metodologías abiertas."
+      },
+      "processes": {
+        "title": "Procesos",
+        "description": "Buscamos identificar, documentar y dar mayor visibilidad a los procesos, no solo a los resultados de investigación."
+      }
+    },
+    "twitter": {
+      "title": "Tweets by aahdArg",
+      "description": "Síguenos en Twitter para las últimas novedades",
+      "cta": "Seguir @aahdArg"
+    },
+    "activities": {
+      "title": "Nuestras Actividades",
+      "facebook": {
+        "title": "Grupo de Facebook",
+        "description": "Grupo de novedades e información abierto."
+      },
+      "zenodo": {
+        "title": "Repositorio Zenodo",
+        "description": "Artículos y escritos de acceso libre."
+      },
+      "mailing": {
+        "title": "Lista de distribución",
+        "description": "Recibí todas las novedades por e-mail."
+      },
+      "wiki": {
+        "title": "Wiki de herramientas",
+        "description": "Explorá herramientas de Humanidades Digitales"
+      },
+      "youtube": {
+        "title": "Canal de YouTube",
+        "description": "Podcast, eventos y más."
+      },
+      "access": "Acceder"
+    }
+  },
+  "footer": {
+    "navigation": "Navegación",
+    "resources": "Recursos",
+    "follow": "Síguenos",
+    "copyright": "Asociación Argentina de Humanidades Digitales. Todos los derechos reservados."
+  }
+}
