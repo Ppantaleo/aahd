@@ -16,7 +16,7 @@
       "description1": "La Asociación Argentina de Humanidades Digitales (AAHD) es una comunidad de práctica abierta cuyo objetivo es promover la investigación, transmisión y difusión del conocimiento en el campo de las Humanidades Digitales, tendiendo puentes entre distintas disciplinas y líneas de investigación.",
       "description2": "Las Humanidades Digitales no constituyen una disciplina temática sino un conjunto de procedimientos que atraviesan nuestras áreas de interés.",
       "description3": "En efecto, si bien las tecnologías digitales se encuentran presentes hoy día en las diferentes etapas de los procesos de investigación acerca de producciones textuales, discursivas, simbólicas y culturales (la búsqueda, difusión, acceso y almacenamiento de información), las Humanidades Digitales plantean la superación de este simple uso instrumental.",
-      "cta": "Conocé más sobre AAHD"
+      "cta": "Conocé más sobre la AAHD"
     },
     "stats": {
       "title": "La AAHD en números",
@@ -165,12 +165,12 @@
     "coordination": [
       { "position": "Coordinación", "name": "Gimena del Rio Riande", "institution": "CONICET" },
       { "position": "Coordinación", "name": "Virginia Brussa", "institution": "UNR" },
-      { "position": "Secretaría", "name": "Romina De León", "institution": "CONICET" },
-      { "position": "Vocal 1", "name": "Lucía Cantamutto", "institution": "UNRN" },
-      { "position": "Vocal 2", "name": "María Bernarda Torres", "institution": "UNCo" },
-      { "position": "Vocal 3", "name": "Carlos Nusch", "institution": "UNLP" },
-      { "position": "Vocal 4", "name": "Marisol Fila", "institution": "UBA /UMICH" },
-      { "position": "Vocal 5", "name": "Andrés Olaizola", "institution": "CONICET" }
+      { "position": "Apoyo técnico", "name": "Romina De León", "institution": "CONICET" },
+      { "position": "Vocal 1 - Congresos", "name": "Lucía Cantamutto", "institution": "UNRN" },
+      { "position": "Vocal 2 - Publicaciones de la AAHD", "name": "Gabriel Calarco", "institution": "UBA" },
+      { "position": "Vocal 3 - Publicaciones de la AAHD", "name": "Carlos Nusch", "institution": "UNLP" },
+      { "position": "Vocal 4 - Internacionalización", "name": "Marisol Fila", "institution": "UBA /UMICH" },
+     
     ],
     "additional_team": [
       { "position": "Difusión", "name": "Nicolás Lázaro", "institution": "UCSF" },
