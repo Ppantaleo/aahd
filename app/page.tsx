@@ -1,3 +1,5 @@
+"use client"
+
 import Image from "next/image"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
@@ -15,82 +17,79 @@ import {
   FileText,
   List,
 } from "lucide-react"
-import type { GetStaticProps } from "next"
-import { getStaticTranslations } from "@/lib/translations"
+import { useTranslations } from "@/lib/translations"
 
-interface HomePageProps {
-  translations: any
-}
+export default function HomePage() {
+  const { t } = useTranslations()
 
-export default function HomePage({ translations }: HomePageProps) {
   const stats = [
-    { label: translations.home.stats.years, value: "10", suffix: "+" },
-    { label: translations.home.stats.participants, value: "1000", suffix: "+" },
-    { label: translations.home.stats.events, value: "15", suffix: "+" },
-    { label: translations.home.stats.publications, value: "5", suffix: "+" },
+    { label: t.home.stats.years, value: "10", suffix: "+" },
+    { label: t.home.stats.participants, value: "1000", suffix: "+" },
+    { label: t.home.stats.events, value: "15", suffix: "+" },
+    { label: t.home.stats.publications, value: "5", suffix: "+" },
   ]
 
   const pillars = [
     {
-      title: translations.home.pillars.digital_turn.title,
-      description: translations.home.pillars.digital_turn.description,
+      title: t.home.pillars.digital_turn.title,
+      description: t.home.pillars.digital_turn.description,
       icon: RotateCcw,
     },
     {
-      title: translations.home.pillars.data.title,
-      description: translations.home.pillars.data.description,
+      title: t.home.pillars.data.title,
+      description: t.home.pillars.data.description,
       icon: Database,
     },
     {
-      title: translations.home.pillars.collaboration.title,
-      description: translations.home.pillars.collaboration.description,
+      title: t.home.pillars.collaboration.title,
+      description: t.home.pillars.collaboration.description,
       icon: Users,
     },
     {
-      title: translations.home.pillars.humanities.title,
-      description: translations.home.pillars.humanities.description,
+      title: t.home.pillars.humanities.title,
+      description: t.home.pillars.humanities.description,
       icon: BookOpen,
     },
     {
-      title: translations.home.pillars.open.title,
-      description: translations.home.pillars.open.description,
+      title: t.home.pillars.open.title,
+      description: t.home.pillars.open.description,
       icon: Unlock,
     },
     {
-      title: translations.home.pillars.processes.title,
-      description: translations.home.pillars.processes.description,
+      title: t.home.pillars.processes.title,
+      description: t.home.pillars.processes.description,
       icon: Settings,
     },
   ]
 
   const activities = [
     {
-      title: translations.home.activities.facebook.title,
-      description: translations.home.activities.facebook.description,
+      title: t.home.activities.facebook.title,
+      description: t.home.activities.facebook.description,
       icon: Facebook,
       url: "#",
     },
     {
-      title: translations.home.activities.zenodo.title,
-      description: translations.home.activities.zenodo.description,
+      title: t.home.activities.zenodo.title,
+      description: t.home.activities.zenodo.description,
       icon: FileText,
       url: "#",
     },
     {
-      title: translations.home.activities.mailing.title,
-      description: translations.home.activities.mailing.description,
+      title: t.home.activities.mailing.title,
+      description: t.home.activities.mailing.description,
       icon: Mail,
       url: "#",
     },
     {
-      title: translations.home.activities.wiki.title,
-      description: translations.home.activities.wiki.description,
+      title: t.home.activities.wiki.title,
+      description: t.home.activities.wiki.description,
       icon: List,
       url: "#",
     },
     {
-      title: translations.home.activities.youtube.title,
-      description: translations.home.activities.youtube.description,
+      title: t.home.activities.youtube.title,
+      description: t.home.activities.youtube.description,
       icon: Youtube,
       url: "#",
     },
@@ -113,7 +112,7 @@ export default function HomePage({ translations }: HomePageProps) {
 
         <div className="relative z-10 text-center text-white max-w-4xl mx-auto px-4">
           <h1 className="text-5xl md:text-7xl font-bold mb-8 leading-tight hero-text-shadow">
-            {translations.home.title}
+            {t.home.title}
           </h1>
 
           <Button
@@ -121,7 +120,7 @@ export default function HomePage({ translations }: HomePageProps) {
             size="lg"
             className="bg-transparent border-2 border-white text-white hover:bg-white hover:text-cyan-600 transition-all duration-300 px-8 py-3 text-lg"
           >
-            <Link href="/about">{translations.home.cta}</Link>
+            <Link href="/about">{t.home.cta}</Link>
           </Button>
         </div>
       </section>
@@ -130,17 +129,17 @@ export default function HomePage({ translations }: HomePageProps) {
       <section className="py-16 bg-white">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-3xl font-bold text-slate-700 mb-8">{translations.home.about.title}</h2>
+            <h2 className="text-3xl font-bold text-slate-700 mb-8">{t.home.about.title}</h2>
 
             <div className="prose prose-lg max-w-none text-gray-600 space-y-6">
-              <p>{translations.home.about.description1}</p>
-              <p>{translations.home.about.description2}</p>
-              <p>{translations.home.about.description3}</p>
+              <p>{t.home.about.description1}</p>
+              <p>{t.home.about.description2}</p>
+              <p>{t.home.about.description3}</p>
             </div>
 
             <div className="mt-8">
               <Button asChild size="lg" className="bg-cyan-600 hover:bg-cyan-700 text-white">
-                <Link href="/about">{translations.home.about.cta}</Link>
+                <Link href="/about">{t.home.about.cta}</Link>
               </Button>
             </div>
           </div>
@@ -150,7 +149,7 @@ export default function HomePage({ translations }: HomePageProps) {
       {/* Stats Section */}
       <section className="py-16 bg-gray-50">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold text-slate-700 mb-12 text-center">{translations.home.stats.title}</h2>
+          <h2 className="text-3xl font-bold text-slate-700 mb-12 text-center">{t.home.stats.title}</h2>
 
           <div className="grid md:grid-cols-4 gap-8">
             {stats.map((stat, index) => (
@@ -169,7 +168,7 @@ export default function HomePage({ translations }: HomePageProps) {
       {/* Humanidades Digitales Pillars */}
       <section className="py-16 bg-white">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold text-slate-700 mb-12 text-center">{translations.home.pillars.title}</h2>
+          <h2 className="text-3xl font-bold text-slate-700 mb-12 text-center">{t.home.pillars.title}</h2>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {pillars.map((pillar, index) => {
@@ -194,12 +193,12 @@ export default function HomePage({ translations }: HomePageProps) {
       <section className="py-16 bg-gray-50">
         <div className="container mx-auto px-4">
           <div className="max-w-2xl mx-auto text-center">
-            <h2 className="text-3xl font-bold text-slate-700 mb-8">{translations.home.twitter.title}</h2>
+            <h2 className="text-3xl font-bold text-slate-700 mb-8">{t.home.twitter.title}</h2>
             <div className="bg-white rounded-lg p-8 shadow-sm">
-              <p className="text-gray-600 mb-4">{translations.home.twitter.description}</p>
+              <p className="text-gray-600 mb-4">{t.home.twitter.description}</p>
               <Button asChild className="bg-cyan-600 hover:bg-cyan-700">
                 <Link href="https://twitter.com/aahdArg" target="_blank">
-                  {translations.home.twitter.cta}
+                  {t.home.twitter.cta}
                 </Link>
               </Button>
             </div>
@@ -210,7 +209,7 @@ export default function HomePage({ translations }: HomePageProps) {
       {/* Activities Section */}
       <section className="py-16 bg-white">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold text-slate-700 mb-12 text-center">{translations.home.activities.title}</h2>
+          <h2 className="text-3xl font-bold text-slate-700 mb-12 text-center">{t.home.activities.title}</h2>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {activities.map((activity, index) => {
@@ -224,7 +223,7 @@ export default function HomePage({ translations }: HomePageProps) {
                   <CardContent className="text-center">
                     <p className="text-gray-600 mb-4">{activity.description}</p>
                     <Button asChild variant="outline" size="sm">
-                      <Link href={activity.url}>{translations.home.activities.access}</Link>
+                      <Link href={activity.url}>{t.home.activities.access}</Link>
                     </Button>
                   </CardContent>
                 </Card>
@@ -235,14 +234,4 @@ export default function HomePage({ translations }: HomePageProps) {
       </section>
     </div>
   )
-}
-
-export const getStaticProps: GetStaticProps = async ({ locale }) => {
-  const translations = getStaticTranslations(locale || "es")
-
-  return {
-    props: {
-      translations,
-    },
-  }
 }
