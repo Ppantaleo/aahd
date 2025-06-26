@@ -1,23 +1,29 @@
+"use client"
+
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
-import { Textarea } from "@/components/ui/textarea"
-import { Label } from "@/components/ui/label"
+// import { Input } from "@/components/ui/input"
+// import { Textarea } from "@/components/ui/textarea"
+// import { Label } from "@/components/ui/label"
 import { Mail, MapPin, Clock } from "lucide-react"
+import { useTranslations } from "@/lib/translations"
 
 export default function ContactoPage() {
+  const { t } = useTranslations()
+
   return (
     <div className="min-h-screen bg-gray-50">
       <div className="container mx-auto px-4 py-16">
         <div className="max-w-6xl mx-auto">
-          <h1 className="text-4xl font-bold text-slate-700 mb-8 text-center">Contacto</h1>
+          <h1 className="text-4xl font-bold text-slate-700 mb-8 text-center">{t.contact.title}</h1>
 
           <p className="text-xl text-gray-600 mb-12 text-center max-w-3xl mx-auto">
-            ¿Tienes preguntas, propuestas o quieres formar parte de nuestra comunidad? Nos encantaría escucharte.
+            {t.contact.description}
           </p>
 
           <div className="grid lg:grid-cols-2 gap-12">
-            {/* Formulario de contacto */}
+            {/* Formulario de contacto comentado */}
+            {/*
             <Card>
               <CardHeader>
                 <CardTitle className="text-2xl text-slate-700">Envíanos un mensaje</CardTitle>
@@ -61,74 +67,111 @@ export default function ContactoPage() {
                 </form>
               </CardContent>
             </Card>
+            */}
+
+            {/* Botón de contacto por email */}
+            <Card className="lg:col-span-2">
+              <CardHeader>
+                <CardTitle className="text-2xl text-slate-700 text-center">{t.contact.email_us}</CardTitle>
+              </CardHeader>
+              <CardContent className="text-center">
+                <p className="text-gray-600 mb-6">{t.contact.email_description}</p>
+                <Button asChild size="lg" className="bg-cyan-600 hover:bg-cyan-700 text-white">
+                  <a href="mailto:hdargentina13@gmail.com">
+                    <Mail className="w-5 h-5 mr-2" />
+                    {t.contact.email_button}
+                  </a>
+                </Button>
+              </CardContent>
+            </Card>
 
             {/* Información de contacto */}
-            <div className="space-y-6">
-              <Card>
-                <CardHeader>
-                  <CardTitle className="text-xl text-slate-700 flex items-center">
-                    <Mail className="w-5 h-5 mr-2 text-cyan-500" />
-                    Email
-                  </CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-gray-600">info@aahd.net.ar</p>
-                  <p className="text-gray-600">secretaria@aahd.net.ar</p>
-                </CardContent>
-              </Card>
+            <div className="lg:col-span-2">
+              <div className="grid lg:grid-cols-3 gap-6">
+                <Card>
+                  <CardHeader>
+                    <CardTitle className="text-xl text-slate-700 flex items-center">
+                      <Mail className="w-5 h-5 mr-2 text-cyan-500" />
+                      Email
+                    </CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <p className="text-gray-600">
+                      <a href="mailto:hdargentina13@gmail.com" className="text-cyan-600 hover:text-cyan-700">
+                        hdargentina13@gmail.com
+                      </a>
+                    </p>
+                  </CardContent>
+                </Card>
 
-              <Card>
-                <CardHeader>
-                  <CardTitle className="text-xl text-slate-700 flex items-center">
-                    <MapPin className="w-5 h-5 mr-2 text-cyan-500" />
-                    Dirección
-                  </CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-gray-600">
-                    Universidad de Buenos Aires
-                    <br />
-                    Facultad de Filosofía y Letras
-                    <br />
-                    Buenos Aires, Argentina
-                  </p>
-                </CardContent>
-              </Card>
+                <Card>
+                  <CardHeader>
+                    <CardTitle className="text-xl text-slate-700 flex items-center">
+                      <MapPin className="w-5 h-5 mr-2 text-cyan-500" />
+                      {t.contact.address_title}
+                    </CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <p className="text-gray-600">
+                      Universidad de Buenos Aires
+                      <br />
+                      Facultad de Filosofía y Letras
+                      <br />
+                      Buenos Aires, Argentina
+                    </p>
+                  </CardContent>
+                </Card>
 
-              <Card>
-                <CardHeader>
-                  <CardTitle className="text-xl text-slate-700 flex items-center">
-                    <Clock className="w-5 h-5 mr-2 text-cyan-500" />
-                    Horarios de atención
-                  </CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-gray-600">
-                    Lunes a Viernes: 9:00 - 17:00
-                    <br />
-                    Sábados: 9:00 - 13:00
-                  </p>
-                </CardContent>
-              </Card>
+                <Card>
+                  <CardHeader>
+                    <CardTitle className="text-xl text-slate-700 flex items-center">
+                      <Clock className="w-5 h-5 mr-2 text-cyan-500" />
+                      {t.contact.hours_title}
+                    </CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <p className="text-gray-600">
+                      {t.contact.hours_weekdays}
+                      <br />
+                      {t.contact.hours_saturday}
+                    </p>
+                  </CardContent>
+                </Card>
+              </div>
+            </div>
 
+            {/* Otras formas de contacto */}
+            <div className="lg:col-span-2">
               <Card>
                 <CardHeader>
-                  <CardTitle className="text-xl text-slate-700">Otras formas de contacto</CardTitle>
+                  <CardTitle className="text-xl text-slate-700">{t.contact.other_ways_title}</CardTitle>
                 </CardHeader>
-                <CardContent className="space-y-4">
+                <CardContent className="grid md:grid-cols-3 gap-6">
                   <div>
-                    <h4 className="font-semibold text-slate-600 mb-2">Para membresías:</h4>
-                    <p className="text-gray-600">membresias@aahd.net.ar</p>
+                    <h4 className="font-semibold text-slate-600 mb-2">{t.contact.memberships_title}</h4>
+                    <p className="text-gray-600">
+                      <a href="mailto:hdargentina13@gmail.com?subject=Membresía" className="text-cyan-600 hover:text-cyan-700">
+                        hdargentina13@gmail.com
+                      </a>
+                    </p>
                   </div>
 
                   <div>
-                    <h4 className="font-semibold text-slate-600 mb-2">Para eventos:</h4>
-                    <p className="text-gray-600">eventos@aahd.net.ar</p>
+                    <h4 className="font-semibold text-slate-600 mb-2">{t.contact.events_title}</h4>
+                    <p className="text-gray-600">
+                      <a href="mailto:hdargentina13@gmail.com?subject=Eventos" className="text-cyan-600 hover:text-cyan-700">
+                        hdargentina13@gmail.com
+                      </a>
+                    </p>
                   </div>
 
                   <div>
-                    <h4 className="font-semibold text-slate-600 mb-2">Para colaboraciones:</h4>
-                    <p className="text-gray-600">colaboraciones@aahd.net.ar</p>
+                    <h4 className="font-semibold text-slate-600 mb-2">{t.contact.collaborations_title}</h4>
+                    <p className="text-gray-600">
+                      <a href="mailto:hdargentina13@gmail.com?subject=Colaboraciones" className="text-cyan-600 hover:text-cyan-700">
+                        hdargentina13@gmail.com
+                      </a>
+                    </p>
                   </div>
                 </CardContent>
               </Card>

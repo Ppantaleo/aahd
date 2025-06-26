@@ -85,7 +85,7 @@ export default function Footer() {
                 <Youtube className="w-4 h-4" />
               </Link>
               <Link
-                href="#"
+                href="mailto:hdargentina13@gmail.com"
                 className="w-8 h-8 bg-cyan-500 rounded-full flex items-center justify-center hover:bg-cyan-600 transition-colors"
               >
                 <Mail className="w-4 h-4" />

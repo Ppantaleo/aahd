@@ -137,5 +137,20 @@
       "constituir un observatorio de prácticas en el uso de las tecnologías para la investigación en esas áreas",
       "fortalecer la comunidad de investigación en Humanidades Digitales en nuestro país, obrando como un ejemplo modélico de trabajo colaborativo"
     ]
+  },
+  "contact": {
+    "title": "Contacto",
+    "description": "¿Tienes preguntas, propuestas o quieres formar parte de nuestra comunidad? Nos encantaría escucharte.",
+    "email_us": "Contáctanos por email",
+    "email_description": "Envíanos tu consulta directamente a nuestro correo electrónico principal.",
+    "email_button": "Enviar email",
+    "address_title": "Dirección",
+    "hours_title": "Horarios de atención", 
+    "hours_weekdays": "Lunes a Viernes: 9:00 - 17:00",
+    "hours_saturday": "Sábados: 9:00 - 13:00",
+    "other_ways_title": "Otras formas de contacto",
+    "memberships_title": "Para membresías:",
+    "events_title": "Para eventos:",
+    "collaborations_title": "Para colaboraciones:"
   }
 }

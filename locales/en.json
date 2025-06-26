@@ -137,5 +137,20 @@
       "constituting an observatory of practices with regards to the use of technologies for research in these areas",
       "strengthening the community engagement in the research processes of Digital Humanities in our country, so that it can be taken as an example of collaborative work"
     ]
+  },
+  "contact": {
+    "title": "Contact",
+    "description": "Do you have questions, proposals or want to be part of our community? We would love to hear from you.",
+    "email_us": "Contact us by email",
+    "email_description": "Send us your inquiry directly to our main email address.",
+    "email_button": "Send email",
+    "address_title": "Address",
+    "hours_title": "Office hours",
+    "hours_weekdays": "Monday to Friday: 9:00 - 17:00",
+    "hours_saturday": "Saturdays: 9:00 - 13:00", 
+    "other_ways_title": "Other ways to contact",
+    "memberships_title": "For memberships:",
+    "events_title": "For events:",
+    "collaborations_title": "For collaborations:"
   }
 }
