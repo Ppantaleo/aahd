@@ -14,7 +14,7 @@ export default function Header() {
         <div className="flex items-center justify-between py-4">
           {/* Logo */}
           <Link href="/" className="flex items-center">
-            <Image src="/images/logo-aahd.jpg" alt="AAHD Logo" width={50} height={50} className="rounded-full mr-3" />
+            <Image src="/aahd/images/logo-aahd.jpg" alt="AAHD Logo" width={50} height={50} className="rounded-full mr-3" />
           </Link>
 
           {/* Mobile menu button */}
