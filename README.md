@@ -187,8 +187,8 @@ El sitio se despliega **automáticamente** en GitHub Pages cuando se hace push a
 ## 📞 Soporte
 
 Para problemas técnicos o preguntas sobre el desarrollo:
-- **Issues**: [GitHub Issues](https://github.com/aahd-argentina/aahd/issues)
-- **Email**: info@aahd.net.ar
+- **Issues**: [GitHub Issues](https://github.com/Ppantaleo/aahd/issues)
+- **Email**: hdargentina13@gmail.com
 
 ## 📄 Licencia
 
@@ -198,4 +198,4 @@ Este proyecto está bajo la Licencia GPL v3 - ver el archivo [LICENSE](LICENSE) 
 
 **Asociación Argentina de Humanidades Digitales**  
 🌐 [aahd.net.ar](https://aahd-argentina.github.io/aahd/)  
-📧 info@aahd.net.ar
+📧 [hdargentina13@gmail.com](mailto:hdargentina13@gmail.com)
