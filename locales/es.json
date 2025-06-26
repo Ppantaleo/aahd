@@ -87,5 +87,16 @@
     "resources": "Recursos",
     "follow": "Síguenos",
     "copyright": "Asociación Argentina de Humanidades Digitales. Todos los derechos reservados."
+  },
+  "community": {
+    "title": "Asociación Argentina de Humanidades Digitales",
+    "description": "Somos una comunidad de práctica y nuestro objetivo es funcionar como un nodo sobre Humanidades Digitales. ¿Querés ser parte de nuestra comunidad y estar en contacto con humanistas digitales? Solo tenés que completar este formulario.",
+    "form_title": "Formulario de registro",
+    "form_button": "Completar formulario de registro",
+    "members_title": "Miembros de la Comunidad",
+    "members_description": "En esta tabla encontrarás los detalles de las personas que conforman nuestra comunidad, con una breve biografía y sus intereses.",
+    "fallback_text": "La tabla de miembros se cargará aquí. Si no puedes verla, por favor",
+    "fallback_link": "haz clic aquí",
+    "fallback_suffix": "para acceder directamente."
   }
 }

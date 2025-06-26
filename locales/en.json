@@ -87,5 +87,16 @@
     "resources": "Resources",
     "follow": "Follow us",
     "copyright": "Argentine Association of Digital Humanities. All rights reserved."
+  },
+  "community": {
+    "title": "Argentine Association of Digital Humanities",
+    "description": "We are a community of practice and our goal is to function as a node for Digital Humanities. Do you want to be part of our community and connect with digital humanists? You just need to complete this form.",
+    "form_title": "Registration Form",
+    "form_button": "Complete registration form",
+    "members_title": "Community Members",
+    "members_description": "In this table you will find details of the people who make up our community, with a brief biography and their interests.",
+    "fallback_text": "The member table will load here. If you can't see it, please",
+    "fallback_link": "click here",
+    "fallback_suffix": "to access directly."
   }
 }
