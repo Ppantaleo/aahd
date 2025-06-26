@@ -163,8 +163,8 @@
     "objectives_intro": "Entre nuestros objetivos se encuentran:",
     "coordination_title": "Coordinación de la AAHD",
     "coordination": [
-      { "position": "Presidenta", "name": "Gimena del Rio Riande", "institution": "CONICET" },
-      { "position": "Vicepresidenta", "name": "Virginia Brussa", "institution": "UNR" },
+      { "position": "Coordinación", "name": "Gimena del Rio Riande", "institution": "CONICET" },
+      { "position": "Coordinación", "name": "Virginia Brussa", "institution": "UNR" },
       { "position": "Secretaría", "name": "Romina De León", "institution": "CONICET" },
       { "position": "Vocal 1", "name": "Lucía Cantamutto", "institution": "UNRN" },
       { "position": "Vocal 2", "name": "María Bernarda Torres", "institution": "UNCo" },
