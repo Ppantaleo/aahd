@@ -61,23 +61,28 @@
       "title": "Our Activities",
       "facebook": {
         "title": "Facebook Group",
-        "description": "Open news and information group."
+        "description": "Open news and information group.",
+        "url": "https://www.facebook.com/groups/humanidadesdigitalesargentina"
       },
       "zenodo": {
         "title": "Zenodo Repository",
-        "description": "Open access articles and writings."
+        "description": "Open access articles and writings.",
+        "url": "https://zenodo.org/communities/humanidades_digitales/"
       },
       "mailing": {
         "title": "Mailing List",
-        "description": "Receive all the news by email."
+        "description": "Receive all the news by email.",
+        "url": "https://groups.google.com/u/0/g/novedadesdelaAAHD/about"
       },
       "wiki": {
         "title": "Tools Wiki",
-        "description": "Explore Digital Humanities tools"
+        "description": "Explore Digital Humanities tools",
+        "url": "http://www.larhud.ibict.br/index.php?title=Herramientas"
       },
       "youtube": {
         "title": "YouTube Channel",
-        "description": "Podcast, events and more."
+        "description": "Podcast, events and more.",
+        "url": "https://www.youtube.com/channel/UCVw7jhPkN0URG92Abnvs5MA"
       },
       "access": "Access"
     }

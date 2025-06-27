@@ -58,28 +58,33 @@
       "cta": "Seguir @aahdArg"
     },
     "activities": {
-      "title": "Nuestras Actividades",
+      "title": "Our Activities",
       "facebook": {
-        "title": "Grupo de Facebook",
-        "description": "Grupo de novedades e información abierto."
+        "title": "Facebook Group",
+        "description": "Open news and information group.",
+        "url": "https://www.facebook.com/groups/humanidadesdigitalesargentina"
       },
       "zenodo": {
-        "title": "Repositorio Zenodo",
-        "description": "Artículos y escritos de acceso libre."
+        "title": "Zenodo Repository",
+        "description": "Open access articles and writings.",
+        "url": "https://zenodo.org/communities/humanidades_digitales/"
       },
       "mailing": {
-        "title": "Lista de distribución",
-        "description": "Recibí todas las novedades por e-mail."
+        "title": "Mailing List",
+        "description": "Receive all the news by email.",
+        "url": "https://groups.google.com/u/0/g/novedadesdelaAAHD/about"
       },
       "wiki": {
-        "title": "Wiki de herramientas",
-        "description": "Explorá herramientas de Humanidades Digitales"
+        "title": "Tools Wiki",
+        "description": "Explore Digital Humanities tools",
+        "url": "http://www.larhud.ibict.br/index.php?title=Herramientas"
       },
       "youtube": {
-        "title": "Canal de YouTube",
-        "description": "Podcast, eventos y más."
+        "title": "YouTube Channel",
+        "description": "Podcast, events and more.",
+        "url": "https://www.youtube.com/channel/UCVw7jhPkN0URG92Abnvs5MA"
       },
-      "access": "Acceder"
+      "access": "Access"
     }
   },
   "footer": {
