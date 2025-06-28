@@ -168,14 +168,13 @@
     "objectives_intro": "Among our objectives are:",
     "coordination_title": "AAHD Coordination",
     "coordination": [
-      { "position": "President", "name": "Gimena del Rio Riande", "institution": "CONICET" },
-      { "position": "Vice President", "name": "Virginia Brussa", "institution": "UNR" },
-      { "position": "Secretary", "name": "Romina De León", "institution": "CONICET" },
-      { "position": "Board Member 1", "name": "Lucía Cantamutto", "institution": "UNRN" },
-      { "position": "Board Member 2", "name": "María Bernarda Torres", "institution": "UNCo" },
-      { "position": "Board Member 3", "name": "Carlos Nusch", "institution": "UNLP" },
-      { "position": "Board Member 4", "name": "Marisol Fila", "institution": "UBA /UMICH" },
-      { "position": "Board Member 5", "name": "Andrés Olaizola", "institution": "CONICET" }
+      { "position": "Coordination", "name": "Gimena del Rio Riande", "institution": "CONICET" },
+      { "position": "Coordination", "name": "Virginia Brussa", "institution": "UNR" },
+      { "position": "Technical assistant", "name": "Romina De León", "institution": "CONICET" },
+      { "position": "Board Member 1 - Conference Organization", "name": "Lucía Cantamutto", "institution": "UNRN" },
+      { "position": "Board Member 2 - Publicaciones de la AAHD", "name": "Gabriel Calarco", "institution": "UBA" },
+      { "position": "Board Member 3 - Publicaciones de la AAHD", "name": "Carlos Nusch", "institution": "UNLP" },
+      { "position": "Board Member 4 - Internationalization", "name": "Marisol Fila", "institution": "UBA /UMICH" }
     ],
     "additional_team": [
       { "position": "Outreach", "name": "Nicolás Lázaro", "institution": "UCSF" },
