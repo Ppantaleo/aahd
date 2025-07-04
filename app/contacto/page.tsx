@@ -113,11 +113,11 @@ export default function ContactoPage() {
                   </CardHeader>
                   <CardContent>
                     <p className="text-gray-600">
-                      Universidad de Buenos Aires
+                     Asociación Argentina de Humanidades Digitales
                       <br />
-                      Facultad de Filosofía y Letras
+                     AAHD
                       <br />
-                      Buenos Aires, Argentina
+                      Argentina
                     </p>
                   </CardContent>
                 </Card>
