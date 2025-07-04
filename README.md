@@ -4,7 +4,7 @@ Sitio web de la **Asociación Argentina de Humanidades Digitales** (AAHD), const
 
 ## 🌐 Sitio Web
 
-**URL**: [https://aahd-argentina.github.io/aahd/](https://aahd-argentina.github.io/aahd/)
+**URL**: [https://aahd.net.ar/](https://aahd.net.ar/)
 
 ## 🛠️ Tecnologías
 
@@ -76,10 +76,8 @@ Los textos del sitio están en los archivos de traducciones:
 
 Las imágenes se guardan en `public/images/` y se referencian así:
 ```typescript
-<Image src="/aahd/images/nombre-imagen.jpg" alt="Descripción" />
+<Image src="/images/nombre-imagen.jpg" alt="Descripción" />
 ```
-
-> **Nota**: Aunque las imágenes están en `public/images/`, se referencian con `/aahd/images/` debido a la configuración de `basePath` en el proyecto para GitHub Pages.
 
 ### 📄 Contenido de Páginas
 
@@ -99,7 +97,7 @@ Para editar el contenido de las páginas, modifica los archivos en `app/`:
 ### Instalación
 ```bash
 # Clonar el repositorio
-git clone https://github.com/aahd-argentina/aahd.git
+git clone https://github.com/Ppantaleo/aahd.git
 cd aahd
 
 # Instalar dependencias
