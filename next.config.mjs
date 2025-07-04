@@ -12,8 +12,9 @@ const nextConfig = {
 
   output: 'export',
   trailingSlash: true,
-  basePath: '/aahd',
-  assetPrefix: '/aahd/',
+  // Comentamos basePath y assetPrefix para dominio personalizado
+  // basePath: '/aahd',
+  // assetPrefix: '/aahd/',
 
   // Removemos la configuración i18n para export estático
   // i18n: {
