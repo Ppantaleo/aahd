@@ -18,7 +18,7 @@ export default function Header() {
           {/* Logo */}
           <Link href="/" className="flex items-center">
             <Image
-              src="/aahd/images/logo-aahd.jpg"
+              src="/images/logo-aahd.jpg"
               alt="AAHD Logo"
               width={50}
               height={50}

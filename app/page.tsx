@@ -101,7 +101,7 @@ export default function HomePage() {
       <section className="relative h-screen flex items-center justify-center">
         <div className="absolute inset-0 z-0">
           <Image
-            src="/aahd/images/nube-humanidades-digitales.png"
+            src="/images/nube-humanidades-digitales.png"
             alt="Nube de palabras de Humanidades Digitales"
             fill
             className="object-cover"
