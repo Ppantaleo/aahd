@@ -58,7 +58,7 @@
       "cta": "Seguir @aahdArg"
     },
     "activities": {
-      "title": "Our Activities",
+      "title": "Nuestras actividades",
       "facebook": {
         "title": "Facebook Group",
         "description": "Open news and information group.",
@@ -84,7 +84,7 @@
         "description": "Podcast, events and more.",
         "url": "https://www.youtube.com/channel/UCVw7jhPkN0URG92Abnvs5MA"
       },
-      "access": "Access"
+      "access": "Visitar"
     }
   },
   "footer": {
