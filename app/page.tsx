@@ -67,31 +67,31 @@ export default function HomePage() {
       title: t.home.activities.facebook.title,
       description: t.home.activities.facebook.description,
       icon: Facebook,
-      url: "#",
+      url: "https://www.facebook.com/groups/humanidadesdigitalesargentina",
     },
     {
       title: t.home.activities.zenodo.title,
       description: t.home.activities.zenodo.description,
       icon: FileText,
-      url: "#",
+      url: "https://zenodo.org/communities/humanidades_digitales/",
     },
     {
       title: t.home.activities.mailing.title,
       description: t.home.activities.mailing.description,
       icon: Mail,
-      url: "#",
+      url: "https://groups.google.com/u/0/g/novedadesdelaAAHD/about",
     },
     {
       title: t.home.activities.wiki.title,
       description: t.home.activities.wiki.description,
       icon: List,
-      url: "#",
+      url: "http://www.larhud.ibict.br/index.php?title=Herramientas",
     },
     {
       title: t.home.activities.youtube.title,
       description: t.home.activities.youtube.description,
       icon: Youtube,
-      url: "#",
+      url: "https://www.youtube.com/channel/UCVw7jhPkN0URG92Abnvs5MA",
     },
   ]
 
