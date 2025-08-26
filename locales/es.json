@@ -53,35 +53,35 @@
       }
     },
     "twitter": {
-      "title": "Tweets by aahdArg",
-      "description": "Síguenos en Twitter para las últimas novedades",
-      "cta": "Seguir @aahdArg"
+      "title": "Instagram AAHD",
+      "description": "Instagram",
+      "cta": "Seguir @humanidadesdigitalesargentina"
     },
     "activities": {
       "title": "Nuestras actividades",
       "facebook": {
-        "title": "Facebook Group",
-        "description": "Open news and information group.",
+        "title": "Grupo de Facebook",
+        "description": "Información sobre el grupo",
         "url": "https://www.facebook.com/groups/humanidadesdigitalesargentina"
       },
       "zenodo": {
-        "title": "Zenodo Repository",
-        "description": "Open access articles and writings.",
+        "title": "Repositorio en Zenodo",
+        "description": "Trabajos y presentaciones en acceso abierto",
         "url": "https://zenodo.org/communities/humanidades_digitales/"
       },
       "mailing": {
         "title": "Mailing List",
-        "description": "Receive all the news by email.",
+        "description": "Recibe nuestras novedades por email",
         "url": "https://groups.google.com/u/0/g/novedadesdelaAAHD/about"
       },
       "wiki": {
-        "title": "Tools Wiki",
-        "description": "Explore Digital Humanities tools",
+        "title": "Wiki de herramientas",
+        "description": "Explora herramientas de Humanidades Digitales",
         "url": "http://www.larhud.ibict.br/index.php?title=Herramientas"
       },
       "youtube": {
-        "title": "YouTube Channel",
-        "description": "Podcast, events and more.",
+        "title": "Canal de YouTube",
+        "description": "Podcast, eventos y más",
         "url": "https://www.youtube.com/channel/UCVw7jhPkN0URG92Abnvs5MA"
       },
       "access": "Visitar"
@@ -147,14 +147,13 @@
     "title": "Contacto",
     "description": "¿Tienes preguntas, propuestas o quieres formar parte de nuestra comunidad? Nos encantaría escucharte.",
     "email_us": "Contáctanos por email",
-    "email_description": "Envíanos tu consulta directamente a nuestro correo electrónico principal.",
+    "email_description": "Envíanos tu consulta",
     "email_button": "Enviar email",
-    "address_title": "Dirección",
-    "hours_title": "Horarios de atención", 
-    "hours_weekdays": "Lunes a Viernes: 9:00 - 17:00",
-    "hours_saturday": "Sábados: 9:00 - 13:00",
+    "address_title": "AAHD",
+    "hours_title": "Argentina", 
+    "hours_weekdays": "Humanidades Digitales",
     "other_ways_title": "Otras formas de contacto",
-    "memberships_title": "Para registros:",
+    "memberships_title": "Consultas sobre envío de artículos",
     "events_title": "Para eventos:",
     "collaborations_title": "Para colaboraciones:"
   },
