@@ -24,7 +24,7 @@ export default function ComunidadPage() {
               <h2 className="text-2xl font-bold text-slate-700 mb-6">{t.community.form_title}</h2>
 
               <Button asChild size="lg" className="bg-cyan-600 hover:bg-cyan-700 text-white">
-                <Link href="#" target="_blank" rel="noopener noreferrer">
+                <Link href="https://docs.google.com/forms/d/e/1FAIpQLSfjWHgcxzMNTuYeVZkBng1e62qExNEyhksk-2wn7cFVhbgAZw/viewform?usp=sharing&ouid=118377425556003857167" target="_blank" rel="noopener noreferrer">
                   {t.community.form_button}
                 </Link>
               </Button>
