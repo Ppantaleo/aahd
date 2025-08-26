@@ -3,7 +3,7 @@ title: "Bienvenidos a la nueva web de AAHD"
 excerpt: "Estrenamos sitio web con nuevas funcionalidades para fortalecer nuestra comunidad de humanidades digitales."
 category: "Recurso"
 author: "Equipo AAHD"
-date: "2024-12-17"
+date: "2025-08-26"
 readTime: "3 min"
 tags: ["AAHD", "Web", "Comunidad", "Novedades"]
 url: "https://aahd.net.ar"
