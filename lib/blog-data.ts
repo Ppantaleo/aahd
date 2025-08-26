@@ -1,8 +1,8 @@
-// lib/blog-data.ts
 import { getAllBitSlugs } from './blog'
 
 // Lista estática para GitHub Pages export
 export const bitSlugs = [
+  'nueva-web',
   'tutorial-analisis-sentimientos-python',
   'base-datos-manuscritos-coloniales', 
   'paleta-colores-visualizaciones',
