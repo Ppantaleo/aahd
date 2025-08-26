@@ -1,6 +1,6 @@
 "use client"
 
-import { useState, useMemo } from "react"
+import { useState, useMemo, useEffect } from "react"
 import Link from "next/link"
 import { Search, Calendar, ExternalLink, Code, Database, Palette, BookOpen } from "lucide-react"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
@@ -15,10 +15,57 @@ interface BitsClientProps {
 }
 
 export default function BitsClient({ posts }: BitsClientProps) {
-  const { t } = useTranslations()
   const [selectedCategory, setSelectedCategory] = useState<string>("Todos")
   const [searchTerm, setSearchTerm] = useState("")
   const [postsToShow, setPostsToShow] = useState(6)
+  const [mounted, setMounted] = useState(false)
+  
+  // Hook de traducciones con fallback
+  const { t } = useTranslations()
+
+  useEffect(() => {
+    setMounted(true)
+  }, [])
+
+  // Textos de fallback para SSR
+  const fallbackTexts = {
+    title: "Bits",
+    description: "Recursos prácticos, herramientas, tutoriales y fragmentos de código para potenciar tus proyectos de humanidades digitales.",
+    searchPlaceholder: "Buscar recursos...",
+    categories: ["Todos", "Tutorial", "Recurso", "Herramienta", "Guía", "Código", "Plantilla"],
+    totalResources: "recursos disponibles",
+    filteredResources: "recursos encontrados",
+    readMore: "Leer más",
+    loadMore: "Cargar más",
+    remaining: "restantes",
+    noResults: "No se encontraron recursos",
+    noResultsDescription: "Intenta cambiar los filtros de búsqueda o usar términos diferentes.",
+    clearFilters: "Limpiar filtros",
+    contribute_title: "Contribuye",
+    contribute_description: "¿Tienes herramientas, tutoriales o recursos que podrían ser útiles para la comunidad?",
+    contribute_button: "Comparte tu recurso"
+  }
+
+  // Usar traducciones si están disponibles, sino fallback
+  const getText = (key: string) => {
+    if (!mounted) return fallbackTexts[key as keyof typeof fallbackTexts] || key
+    
+    try {
+      // Intentar acceder a la traducción de forma segura
+      const keys = key.split('.')
+      let value: any = t
+      for (const k of keys) {
+        if (value && typeof value === 'object' && k in value) {
+          value = value[k]
+        } else {
+          return fallbackTexts[key as keyof typeof fallbackTexts] || key
+        }
+      }
+      return value || fallbackTexts[key as keyof typeof fallbackTexts] || key
+    } catch {
+      return fallbackTexts[key as keyof typeof fallbackTexts] || key
+    }
+  }
 
   // Categorías disponibles
   const categories = ["Todos", "Tutorial", "Recurso", "Herramienta", "Guía", "Código", "Plantilla"]
@@ -80,9 +127,9 @@ export default function BitsClient({ posts }: BitsClientProps) {
       <div className="bg-slate-700 text-white py-16">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
-            <h1 className="text-4xl md:text-6xl font-bold mb-6">{t('bits.title')}</h1>
+            <h1 className="text-4xl md:text-6xl font-bold mb-6">{getText('title')}</h1>
             <p className="text-xl text-gray-300 mb-8 max-w-3xl mx-auto">
-              {t('bits.description')}
+              {getText('description')}
             </p>
             
             {/* Buscador */}
@@ -90,7 +137,7 @@ export default function BitsClient({ posts }: BitsClientProps) {
               <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-4 h-4" />
               <Input
                 type="text"
-                placeholder={t('bits.searchPlaceholder')}
+                placeholder={getText('searchPlaceholder')}
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
                 className="pl-10 bg-white/10 border-white/20 text-white placeholder:text-gray-400"
@@ -113,7 +160,7 @@ export default function BitsClient({ posts }: BitsClientProps) {
                   className="cursor-pointer hover:bg-cyan-100 transition-colors px-4 py-2"
                   onClick={() => setSelectedCategory(categoria)}
                 >
-                  {categoria === "Todos" ? t('bits.categories')[0] : categoria}
+                  {categoria}
                 </Badge>
               ))}
             </div>
@@ -123,8 +170,8 @@ export default function BitsClient({ posts }: BitsClientProps) {
           <div className="text-center mb-8">
             <p className="text-gray-600">
               {filteredPosts.length === posts.length 
-                ? `${posts.length} ${t('bits.totalResources')}`
-                : `${filteredPosts.length} de ${posts.length} ${t('bits.filteredResources')}`
+                ? `${posts.length} ${getText('totalResources')}`
+                : `${filteredPosts.length} de ${posts.length} ${getText('filteredResources')}`
               }
             </p>
           </div>
@@ -181,7 +228,7 @@ export default function BitsClient({ posts }: BitsClientProps) {
                       <div className="flex gap-2">
                         <Link href={`/bits/${bit.slug}`} className="flex-1">
                           <Button variant="default" size="sm" className="w-full">
-                            {t('bits.readMore')}
+                            {getText('readMore')}
                           </Button>
                         </Link>
                         
@@ -203,10 +250,10 @@ export default function BitsClient({ posts }: BitsClientProps) {
             <div className="text-center py-12">
               <div className="text-6xl mb-4">🔍</div>
               <h3 className="text-xl font-semibold text-gray-600 mb-2">
-                {t('bits.noResults')}
+                {getText('noResults')}
               </h3>
               <p className="text-gray-500 mb-4">
-                {t('bits.noResultsDescription')}
+                {getText('noResultsDescription')}
               </p>
               <Button 
                 variant="outline" 
@@ -215,7 +262,7 @@ export default function BitsClient({ posts }: BitsClientProps) {
                   setSelectedCategory("Todos")
                 }}
               >
-                {t('bits.clearFilters')}
+                {getText('clearFilters')}
               </Button>
             </div>
           )}
@@ -229,7 +276,7 @@ export default function BitsClient({ posts }: BitsClientProps) {
                 onClick={loadMorePosts}
                 className="px-8"
               >
-                {t('bits.loadMore')} ({filteredPosts.length - postsToShow} {t('bits.remaining')})
+                {getText('loadMore')} ({filteredPosts.length - postsToShow} {getText('remaining')})
               </Button>
             </div>
           )}
@@ -238,14 +285,14 @@ export default function BitsClient({ posts }: BitsClientProps) {
           <div className="text-center mt-16">
             <div className="bg-white rounded-lg p-8 shadow-sm">
               <h3 className="text-2xl font-bold text-slate-700 mb-4">
-                {t('bits.contribute_title')}
+                {getText('contribute_title')}
               </h3>
               <p className="text-gray-600 mb-6 max-w-2xl mx-auto">
-                {t('bits.contribute_description')}
+                {getText('contribute_description')}
               </p>
               <Link href="/contacto">
                 <Button size="lg" className="bg-cyan-600 hover:bg-cyan-700">
-                  {t('bits.contribute_button')}
+                  {getText('contribute_button')}
                 </Button>
               </Link>
             </div>
