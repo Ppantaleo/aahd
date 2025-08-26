@@ -1,103 +1,117 @@
-"use client"
+"use server"
 
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { Badge } from "@/components/ui/badge"
-import { Calendar, ExternalLink, Code, Database, Palette, BookOpen } from "lucide-react"
-import Link from "next/link"
-import { useTranslations } from "@/lib/translations"
+import { Metadata } from 'next'
+import { getAllBits, BitPost } from '@/lib/blog'
+import BitsClient from './bits-client'
 
-export default function BitsPage() {
-  const { t } = useTranslations()
+// Datos hardcodeados como fallback (del sistema actual)
+const fallbackBits: BitPost[] = [
+  {
+    slug: 'tutorial-analisis-sentimientos-python',
+    title: 'Tutorial: Análisis de sentimientos con Python',
+    excerpt: 'Guía paso a paso para implementar análisis de sentimientos en textos históricos usando Python y NLTK.',
+    content: '', // Se llena en el template individual
+    category: 'Tutorial',
+    author: 'Dr. María González',
+    date: '2024-01-18',
+    readTime: '12 min',
+    tags: ['Python', 'NLTK', 'Análisis de Sentimientos', 'Procesamiento de Texto'],
+    url: 'https://github.com/aahd/tutorial-sentimientos',
+    difficulty: 'Intermedio'
+  },
+  {
+    slug: 'base-datos-manuscritos-coloniales',
+    title: 'Base de datos de manuscritos coloniales',
+    excerpt: 'Acceso a una base de datos digitalizada de manuscritos del período colonial argentino.',
+    content: '',
+    category: 'Recurso',
+    author: 'Dra. Ana Martínez',
+    date: '2024-01-10',
+    readTime: '6 min',
+    tags: ['Manuscritos', 'Historia Colonial', 'Base de Datos', 'API'],
+    url: 'https://manuscritos-coloniales.org'
+  },
+  {
+    slug: 'paleta-colores-visualizaciones',
+    title: 'Paleta de colores para visualizaciones históricas',
+    excerpt: 'Conjunto de paletas de colores diseñadas específicamente para visualizaciones de datos históricos.',
+    content: '',
+    category: 'Herramienta',
+    author: 'Lic. Carlos Ruiz',
+    date: '2023-12-28',
+    readTime: '4 min',
+    tags: ['Visualización', 'Colores', 'Diseño', 'CSS'],
+    url: 'https://github.com/aahd/historical-colors'
+  },
+  {
+    slug: 'guia-buenas-practicas-digitalizacion',
+    title: 'Guía de buenas prácticas en digitalización',
+    excerpt: 'Recomendaciones para la digitalización de documentos y archivos históricos.',
+    content: '',
+    category: 'Guía',
+    author: 'Dr. Fernando López',
+    date: '2023-12-15',
+    readTime: '10 min',
+    tags: ['Digitalización', 'Archivos', 'Metodología', 'Conservación']
+  },
+  {
+    slug: 'script-limpieza-datos-ocr',
+    title: 'Script para limpieza de datos OCR',
+    excerpt: 'Herramienta automatizada para limpiar y corregir errores comunes en textos procesados con OCR.',
+    content: '',
+    category: 'Código',
+    author: 'Dr. Carlos Martín',
+    date: '2023-12-02',
+    readTime: '8 min',
+    tags: ['Python', 'OCR', 'Limpieza de Datos', 'Automatización'],
+    url: 'https://github.com/aahd/ocr-cleanup'
+  },
+  {
+    slug: 'plantillas-mapas-interactivos',
+    title: 'Plantillas para mapas interactivos',
+    excerpt: 'Plantillas HTML/CSS/JS para crear mapas interactivos de eventos históricos.',
+    content: '',
+    category: 'Plantilla',
+    author: 'Lic. Sofia Vega',
+    date: '2023-11-18',
+    readTime: '6 min',
+    tags: ['JavaScript', 'Mapas', 'Interactividad', 'HTML'],
+    url: 'https://github.com/aahd/interactive-maps'
+  }
+]
 
-  const getIcon = (category: string) => {
-    switch (category) {
-      case "Tutorial": return Code
-      case "Recurso": 
-      case "Resource": return Database
-      case "Herramienta":
-      case "Tool": return Palette
-      case "Guía":
-      case "Guide": return BookOpen
-      case "Código":
-      case "Code": return Code
-      case "Plantilla":
-      case "Template": return Palette
-      default: return Code
+async function getBitsData(): Promise<BitPost[]> {
+  try {
+    // Intentar leer desde Markdown primero
+    const markdownPosts = getAllBits()
+    if (markdownPosts.length > 0) {
+      return markdownPosts
     }
+  } catch (error) {
+    console.warn('No se pudieron leer posts de Markdown, usando fallback')
   }
 
-  return (
-    <div className="min-h-screen bg-gray-50">
-      <div className="container mx-auto px-4 py-16">
-        <div className="max-w-6xl mx-auto">
-          <h1 className="text-4xl font-bold text-slate-700 mb-8 text-center">{t.bits.title}</h1>
+  // Fallback a datos hardcodeados
+  return fallbackBits
+}
 
-          <p className="text-xl text-gray-600 mb-12 text-center max-w-3xl mx-auto">
-            {t.bits.description}
-          </p>
+export const metadata: Metadata = {
+  title: 'Bits - Recursos para Humanidades Digitales | AAHD',
+  description: 'Recursos prácticos, herramientas, tutoriales y fragmentos de código para potenciar tus proyectos de humanidades digitales.',
+  openGraph: {
+    title: 'Bits - Recursos para Humanidades Digitales',
+    description: 'Recursos prácticos, herramientas, tutoriales y fragmentos de código para potenciar tus proyectos de humanidades digitales.',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Bits - Recursos para Humanidades Digitales',
+    description: 'Recursos prácticos, herramientas, tutoriales y fragmentos de código para potenciar tus proyectos de humanidades digitales.',
+  },
+}
 
-          {/* Filtros por categoría */}
-          <div className="flex flex-wrap justify-center gap-2 mb-12">
-            {t.bits.categories.map((categoria, index) => (
-              <Badge
-                key={index}
-                variant={categoria === t.bits.categories[0] ? "default" : "outline"}
-                className="cursor-pointer hover:bg-cyan-100 transition-colors"
-              >
-                {categoria}
-              </Badge>
-            ))}
-          </div>
+export default async function BitsPage() {
+  const posts = await getBitsData()
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {t.bits.bits.map((bit, index) => {
-              const IconComponent = getIcon(bit.category)
-              return (
-                <Card key={index} className="hover:shadow-lg transition-shadow h-full">
-                  <CardHeader>
-                    <div className="flex justify-between items-start mb-2">
-                      <Badge variant="secondary">{bit.category}</Badge>
-                      <div className="flex items-center text-sm text-gray-500">
-                        <Calendar className="w-4 h-4 mr-1" />
-                        {new Date(bit.date).toLocaleDateString("es-AR")}
-                      </div>
-                    </div>
-                    <div className="flex items-center mb-3">
-                      <IconComponent className="w-6 h-6 text-cyan-500 mr-2" />
-                      <CardTitle className="text-lg text-slate-700">{bit.title}</CardTitle>
-                    </div>
-                  </CardHeader>
-                  <CardContent className="flex flex-col justify-between flex-1">
-                    <p className="text-gray-600 mb-4 flex-1">{bit.description}</p>
-                    <Link
-                      href={bit.url}
-                      className="inline-flex items-center text-cyan-600 hover:text-cyan-700 font-medium"
-                    >
-                      {t.bits.access}
-                      <ExternalLink className="w-4 h-4 ml-1" />
-                    </Link>
-                  </CardContent>
-                </Card>
-              )
-            })}
-          </div>
-
-          <div className="text-center mt-12">
-            <div className="bg-white rounded-lg p-8">
-              <h3 className="text-2xl font-bold text-slate-700 mb-4">{t.bits.contribute_title}</h3>
-              <p className="text-gray-600 mb-6">
-                {t.bits.contribute_description}
-              </p>
-              <Link
-                href="/contacto"
-                className="inline-flex items-center bg-cyan-600 text-white px-6 py-3 rounded-lg hover:bg-cyan-700 transition-colors"
-              >
-                {t.bits.contribute_button}
-              </Link>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  )
+  return <BitsClient posts={posts} />
 }
