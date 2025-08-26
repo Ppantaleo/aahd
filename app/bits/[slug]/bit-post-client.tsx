@@ -1,13 +1,12 @@
 "use client"
 
-import { useState, useEffect } from "react"
+import { useState, useEffect, useRef } from "react"
 import Link from "next/link"
 import { ArrowLeft, Calendar, Clock, User, Tag, Share2 } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import { useTranslations } from "@/lib/translations"
 
-// Interfaz del post (definida aquí para evitar problemas de importación)
 interface BitPost {
   slug: string
   title: string
@@ -26,38 +25,48 @@ interface BitPostClientProps {
   post: BitPost
 }
 
+interface TocItem {
+  id: string
+  text: string
+  level: number
+}
+
 export default function BitPostClient({ post }: BitPostClientProps) {
   const { t } = useTranslations()
   const [mounted, setMounted] = useState(false)
-  const [tableOfContents, setTableOfContents] = useState<Array<{id: string, text: string, level: number}>>([])
+  const [tableOfContents, setTableOfContents] = useState<TocItem[]>([])
+  const contentRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
     setMounted(true)
-    
-    // Generar tabla de contenidos dinámicamente basada en los headings del contenido
+  }, [])
+
+  useEffect(() => {
+    if (!mounted || !contentRef.current) return
+
     const generateTableOfContents = () => {
-      // Esperar un momento para que el contenido se renderice
-      setTimeout(() => {
-        const contentElement = document.querySelector('.prose')
-        if (contentElement) {
-          const headings = contentElement.querySelectorAll('h1, h2, h3, h4')
-          const toc = Array.from(headings).map((heading, index) => {
-            const id = `heading-${index}`
-            heading.id = id
-            const level = parseInt(heading.tagName.charAt(1))
-            return {
-              id,
-              text: heading.textContent || '',
-              level
-            }
-          })
-          setTableOfContents(toc)
-        }
-      }, 100)
+      const headings = contentRef.current?.querySelectorAll('h1, h2, h3, h4, h5, h6')
+      
+      if (!headings || headings.length === 0) return
+
+      const toc: TocItem[] = Array.from(headings).map((heading, index) => {
+        const id = `heading-${index}`
+        heading.id = id
+        heading.scrollMarginTop = '100px' // Espacio para el header fijo
+        
+        const level = parseInt(heading.tagName.charAt(1))
+        const text = heading.textContent || ''
+        
+        return { id, text, level }
+      })
+      
+      setTableOfContents(toc)
     }
 
-    generateTableOfContents()
-  }, [post.content])
+    // Delay para asegurar que el DOM esté completamente renderizado
+    const timer = setTimeout(generateTableOfContents, 200)
+    return () => clearTimeout(timer)
+  }, [mounted, post.content])
 
   const handleShare = async () => {
     if (!mounted) return
@@ -102,7 +111,9 @@ export default function BitPostClient({ post }: BitPostClientProps) {
   const scrollToHeading = (id: string) => {
     const element = document.getElementById(id)
     if (element) {
-      element.scrollIntoView({ behavior: 'smooth', block: 'start' })
+      const yOffset = -80 // Offset para el header
+      const y = element.getBoundingClientRect().top + window.pageYOffset + yOffset
+      window.scrollTo({ top: y, behavior: 'smooth' })
     }
   }
 
@@ -166,7 +177,7 @@ export default function BitPostClient({ post }: BitPostClientProps) {
             {tableOfContents.length > 0 && (
               <div className="hidden lg:block">
                 <div className="sticky top-8">
-                  <div className="bg-white rounded-lg p-6 shadow-sm">
+                  <div className="bg-white rounded-lg p-6 shadow-sm border">
                     <h3 className="font-semibold text-slate-700 mb-4">
                       Tabla de contenidos
                     </h3>
@@ -175,9 +186,13 @@ export default function BitPostClient({ post }: BitPostClientProps) {
                         <button
                           key={item.id}
                           onClick={() => scrollToHeading(item.id)}
-                          className={`block text-left w-full text-sm text-gray-600 hover:text-cyan-600 transition-colors ${
-                            item.level > 2 ? 'ml-4' : ''
+                          className={`block text-left w-full text-sm text-gray-600 hover:text-cyan-600 transition-colors py-1 ${
+                            item.level === 1 ? '' :
+                            item.level === 2 ? 'ml-2' :
+                            item.level === 3 ? 'ml-4' :
+                            'ml-6'
                           }`}
+                          style={{ textAlign: 'left' }}
                         >
                           {item.text}
                         </button>
@@ -190,7 +205,7 @@ export default function BitPostClient({ post }: BitPostClientProps) {
 
             {/* Contenido del post */}
             <div className="lg:col-span-3">
-              <div className="bg-white rounded-lg shadow-sm">
+              <div className="bg-white rounded-lg shadow-sm border">
                 {/* Acciones del post */}
                 <div className="p-6 border-b border-gray-200">
                   <div className="flex flex-wrap items-center justify-between gap-4">
@@ -215,30 +230,11 @@ export default function BitPostClient({ post }: BitPostClientProps) {
                   </div>
                 </div>
 
-                {/* Contenido Markdown con estilos mejorados */}
+                {/* Contenido Markdown */}
                 <div className="p-6">
                   <div 
-                    className="prose prose-lg max-w-none
-                      prose-headings:text-slate-700 prose-headings:font-semibold
-                      prose-h1:text-3xl prose-h1:font-bold prose-h1:mb-6 prose-h1:mt-8 prose-h1:text-slate-800
-                      prose-h2:text-2xl prose-h2:font-semibold prose-h2:mt-8 prose-h2:mb-4 prose-h2:text-slate-700 prose-h2:border-b prose-h2:border-gray-200 prose-h2:pb-2
-                      prose-h3:text-xl prose-h3:font-medium prose-h3:mt-6 prose-h3:mb-3 prose-h3:text-slate-600
-                      prose-h4:text-lg prose-h4:font-medium prose-h4:mt-4 prose-h4:mb-2 prose-h4:text-slate-600
-                      prose-p:text-gray-700 prose-p:leading-relaxed prose-p:mb-4 prose-p:text-base
-                      prose-strong:text-slate-700 prose-strong:font-semibold
-                      prose-em:text-slate-600 prose-em:italic
-                      prose-code:bg-gray-100 prose-code:px-2 prose-code:py-1 prose-code:rounded prose-code:text-sm prose-code:text-slate-800 prose-code:font-mono
-                      prose-pre:bg-slate-800 prose-pre:text-gray-100 prose-pre:p-4 prose-pre:rounded-lg prose-pre:overflow-x-auto prose-pre:my-6
-                      prose-pre:code:bg-transparent prose-pre:code:p-0 prose-pre:code:text-gray-100
-                      prose-ul:my-4 prose-ul:text-gray-700 prose-ul:space-y-1
-                      prose-ol:my-4 prose-ol:text-gray-700 prose-ol:space-y-1
-                      prose-li:my-1 prose-li:text-gray-700 prose-li:leading-relaxed
-                      prose-blockquote:border-l-4 prose-blockquote:border-cyan-500 prose-blockquote:pl-6 prose-blockquote:py-2 prose-blockquote:my-6 prose-blockquote:italic prose-blockquote:bg-gray-50 prose-blockquote:text-slate-600
-                      prose-a:text-cyan-600 prose-a:no-underline prose-a:font-medium hover:prose-a:text-cyan-700 hover:prose-a:underline
-                      prose-table:my-6 prose-table:w-full prose-table:border-collapse
-                      prose-th:border prose-th:border-gray-300 prose-th:bg-gray-50 prose-th:p-2 prose-th:text-left prose-th:font-semibold prose-th:text-slate-700
-                      prose-td:border prose-td:border-gray-300 prose-td:p-2 prose-td:text-gray-700
-                      prose-hr:my-8 prose-hr:border-gray-300"
+                    ref={contentRef}
+                    className="markdown-content"
                     dangerouslySetInnerHTML={{ __html: post.content }}
                   />
                 </div>
@@ -284,6 +280,147 @@ export default function BitPostClient({ post }: BitPostClientProps) {
           </div>
         </div>
       </div>
+
+      <style jsx global>{`
+        .markdown-content {
+          max-width: none;
+          line-height: 1.7;
+          color: #374151;
+        }
+
+        .markdown-content h1 {
+          font-size: 2rem;
+          font-weight: 700;
+          color: #1f2937;
+          margin: 2rem 0 1rem 0;
+          scroll-margin-top: 100px;
+        }
+
+        .markdown-content h2 {
+          font-size: 1.75rem;
+          font-weight: 600;
+          color: #374151;
+          margin: 2rem 0 1rem 0;
+          border-bottom: 2px solid #e5e7eb;
+          padding-bottom: 0.5rem;
+          scroll-margin-top: 100px;
+        }
+
+        .markdown-content h3 {
+          font-size: 1.5rem;
+          font-weight: 500;
+          color: #4b5563;
+          margin: 1.5rem 0 0.75rem 0;
+          scroll-margin-top: 100px;
+        }
+
+        .markdown-content h4 {
+          font-size: 1.25rem;
+          font-weight: 500;
+          color: #4b5563;
+          margin: 1.25rem 0 0.5rem 0;
+          scroll-margin-top: 100px;
+        }
+
+        .markdown-content p {
+          margin: 1rem 0;
+          line-height: 1.7;
+        }
+
+        .markdown-content strong {
+          font-weight: 600;
+          color: #1f2937;
+        }
+
+        .markdown-content em {
+          font-style: italic;
+          color: #4b5563;
+        }
+
+        .markdown-content ul {
+          margin: 1rem 0;
+          padding-left: 1.5rem;
+        }
+
+        .markdown-content ol {
+          margin: 1rem 0;
+          padding-left: 1.5rem;
+        }
+
+        .markdown-content li {
+          margin: 0.25rem 0;
+          line-height: 1.6;
+        }
+
+        .markdown-content blockquote {
+          border-left: 4px solid #06b6d4;
+          background-color: #f8fafc;
+          padding: 1rem 1.5rem;
+          margin: 1.5rem 0;
+          font-style: italic;
+          color: #4b5563;
+        }
+
+        .markdown-content code {
+          background-color: #f1f5f9;
+          padding: 0.125rem 0.375rem;
+          border-radius: 0.25rem;
+          font-size: 0.875rem;
+          font-family: 'Courier New', monospace;
+          color: #1e293b;
+        }
+
+        .markdown-content pre {
+          background-color: #1e293b;
+          color: #f1f5f9;
+          padding: 1rem;
+          border-radius: 0.5rem;
+          overflow-x: auto;
+          margin: 1.5rem 0;
+        }
+
+        .markdown-content pre code {
+          background-color: transparent;
+          padding: 0;
+          color: #f1f5f9;
+        }
+
+        .markdown-content a {
+          color: #06b6d4;
+          text-decoration: none;
+          font-weight: 500;
+        }
+
+        .markdown-content a:hover {
+          color: #0891b2;
+          text-decoration: underline;
+        }
+
+        .markdown-content table {
+          width: 100%;
+          border-collapse: collapse;
+          margin: 1.5rem 0;
+        }
+
+        .markdown-content th,
+        .markdown-content td {
+          border: 1px solid #d1d5db;
+          padding: 0.5rem;
+          text-align: left;
+        }
+
+        .markdown-content th {
+          background-color: #f9fafb;
+          font-weight: 600;
+          color: #1f2937;
+        }
+
+        .markdown-content hr {
+          border: none;
+          border-top: 1px solid #d1d5db;
+          margin: 2rem 0;
+        }
+      `}</style>
     </div>
   )
 }
