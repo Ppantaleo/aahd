@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react"
 import Link from "next/link"
-import { ArrowLeft, Calendar, Clock, User, Tag, ExternalLink, Share2 } from "lucide-react"
+import { ArrowLeft, Calendar, Clock, User, Tag, Share2 } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import { useTranslations } from "@/lib/translations"
@@ -29,23 +29,35 @@ interface BitPostClientProps {
 export default function BitPostClient({ post }: BitPostClientProps) {
   const { t } = useTranslations()
   const [mounted, setMounted] = useState(false)
-  const [tableOfContents, setTableOfContents] = useState<Array<{id: string, text: string}>>([])
+  const [tableOfContents, setTableOfContents] = useState<Array<{id: string, text: string, level: number}>>([])
 
   useEffect(() => {
     setMounted(true)
     
-    // Generar tabla de contenidos basada en H2s
-    const headings = document.querySelectorAll('.prose h2')
-    const toc = Array.from(headings).map((heading, index) => {
-      const id = `heading-${index}`
-      heading.id = id
-      return {
-        id,
-        text: heading.textContent || ''
-      }
-    })
-    setTableOfContents(toc)
-  }, [])
+    // Generar tabla de contenidos dinámicamente basada en los headings del contenido
+    const generateTableOfContents = () => {
+      // Esperar un momento para que el contenido se renderice
+      setTimeout(() => {
+        const contentElement = document.querySelector('.prose')
+        if (contentElement) {
+          const headings = contentElement.querySelectorAll('h1, h2, h3, h4')
+          const toc = Array.from(headings).map((heading, index) => {
+            const id = `heading-${index}`
+            heading.id = id
+            const level = parseInt(heading.tagName.charAt(1))
+            return {
+              id,
+              text: heading.textContent || '',
+              level
+            }
+          })
+          setTableOfContents(toc)
+        }
+      }, 100)
+    }
+
+    generateTableOfContents()
+  }, [post.content])
 
   const handleShare = async () => {
     if (!mounted) return
@@ -60,7 +72,6 @@ export default function BitPostClient({ post }: BitPostClientProps) {
       try {
         await navigator.share(shareData)
       } catch (error) {
-        // Si falla, copiar al portapapeles
         copyToClipboard()
       }
     } else {
@@ -72,7 +83,6 @@ export default function BitPostClient({ post }: BitPostClientProps) {
     if (!mounted) return
     
     navigator.clipboard.writeText(window.location.href).then(() => {
-      // Podrías mostrar un toast aquí
       alert('¡Enlace copiado al portapapeles!')
     })
   }
@@ -89,6 +99,13 @@ export default function BitPostClient({ post }: BitPostClientProps) {
     }
   }
 
+  const scrollToHeading = (id: string) => {
+    const element = document.getElementById(id)
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth', block: 'start' })
+    }
+  }
+
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Header con fondo */}
@@ -100,7 +117,7 @@ export default function BitPostClient({ post }: BitPostClientProps) {
               className="inline-flex items-center text-cyan-300 hover:text-cyan-200 mb-6"
             >
               <ArrowLeft className="w-4 h-4 mr-2" />
-              ← Volver a Bits
+              Volver a Bits
             </Link>
 
             <div className="mb-4">
@@ -155,13 +172,15 @@ export default function BitPostClient({ post }: BitPostClientProps) {
                     </h3>
                     <nav className="space-y-2">
                       {tableOfContents.map((item) => (
-                        <a
+                        <button
                           key={item.id}
-                          href={`#${item.id}`}
-                          className="block text-sm text-gray-600 hover:text-cyan-600 transition-colors"
+                          onClick={() => scrollToHeading(item.id)}
+                          className={`block text-left w-full text-sm text-gray-600 hover:text-cyan-600 transition-colors ${
+                            item.level > 2 ? 'ml-4' : ''
+                          }`}
                         >
                           {item.text}
-                        </a>
+                        </button>
                       ))}
                     </nav>
                   </div>
@@ -184,15 +203,6 @@ export default function BitPostClient({ post }: BitPostClientProps) {
                     </div>
                     
                     <div className="flex gap-2">
-                      {post.url && (
-                        <Button asChild variant="outline" size="sm">
-                          <a href={post.url} target="_blank" rel="noopener noreferrer">
-                            <ExternalLink className="w-4 h-4 mr-2" />
-                            Acceder recurso
-                          </a>
-                        </Button>
-                      )}
-                      
                       <Button 
                         variant="outline" 
                         size="sm" 
@@ -205,22 +215,30 @@ export default function BitPostClient({ post }: BitPostClientProps) {
                   </div>
                 </div>
 
-                {/* Contenido Markdown */}
+                {/* Contenido Markdown con estilos mejorados */}
                 <div className="p-6">
                   <div 
                     className="prose prose-lg max-w-none
-                      prose-headings:text-slate-700 
-                      prose-h1:text-3xl prose-h1:font-bold prose-h1:mb-6
-                      prose-h2:text-2xl prose-h2:font-semibold prose-h2:mt-8 prose-h2:mb-4 prose-h2:text-slate-600
-                      prose-h3:text-xl prose-h3:font-medium prose-h3:mt-6 prose-h3:mb-3
-                      prose-p:text-gray-700 prose-p:leading-relaxed prose-p:mb-4
+                      prose-headings:text-slate-700 prose-headings:font-semibold
+                      prose-h1:text-3xl prose-h1:font-bold prose-h1:mb-6 prose-h1:mt-8 prose-h1:text-slate-800
+                      prose-h2:text-2xl prose-h2:font-semibold prose-h2:mt-8 prose-h2:mb-4 prose-h2:text-slate-700 prose-h2:border-b prose-h2:border-gray-200 prose-h2:pb-2
+                      prose-h3:text-xl prose-h3:font-medium prose-h3:mt-6 prose-h3:mb-3 prose-h3:text-slate-600
+                      prose-h4:text-lg prose-h4:font-medium prose-h4:mt-4 prose-h4:mb-2 prose-h4:text-slate-600
+                      prose-p:text-gray-700 prose-p:leading-relaxed prose-p:mb-4 prose-p:text-base
                       prose-strong:text-slate-700 prose-strong:font-semibold
-                      prose-code:bg-gray-100 prose-code:px-1 prose-code:py-0.5 prose-code:rounded prose-code:text-sm
-                      prose-pre:bg-slate-800 prose-pre:text-gray-100 prose-pre:p-4 prose-pre:rounded-lg prose-pre:overflow-x-auto
-                      prose-ul:my-4 prose-li:my-1 prose-li:text-gray-700
-                      prose-ol:my-4 prose-ol:text-gray-700
-                      prose-blockquote:border-l-4 prose-blockquote:border-cyan-500 prose-blockquote:pl-4 prose-blockquote:italic
-                      prose-a:text-cyan-600 prose-a:no-underline hover:prose-a:text-cyan-700 hover:prose-a:underline"
+                      prose-em:text-slate-600 prose-em:italic
+                      prose-code:bg-gray-100 prose-code:px-2 prose-code:py-1 prose-code:rounded prose-code:text-sm prose-code:text-slate-800 prose-code:font-mono
+                      prose-pre:bg-slate-800 prose-pre:text-gray-100 prose-pre:p-4 prose-pre:rounded-lg prose-pre:overflow-x-auto prose-pre:my-6
+                      prose-pre:code:bg-transparent prose-pre:code:p-0 prose-pre:code:text-gray-100
+                      prose-ul:my-4 prose-ul:text-gray-700 prose-ul:space-y-1
+                      prose-ol:my-4 prose-ol:text-gray-700 prose-ol:space-y-1
+                      prose-li:my-1 prose-li:text-gray-700 prose-li:leading-relaxed
+                      prose-blockquote:border-l-4 prose-blockquote:border-cyan-500 prose-blockquote:pl-6 prose-blockquote:py-2 prose-blockquote:my-6 prose-blockquote:italic prose-blockquote:bg-gray-50 prose-blockquote:text-slate-600
+                      prose-a:text-cyan-600 prose-a:no-underline prose-a:font-medium hover:prose-a:text-cyan-700 hover:prose-a:underline
+                      prose-table:my-6 prose-table:w-full prose-table:border-collapse
+                      prose-th:border prose-th:border-gray-300 prose-th:bg-gray-50 prose-th:p-2 prose-th:text-left prose-th:font-semibold prose-th:text-slate-700
+                      prose-td:border prose-td:border-gray-300 prose-td:p-2 prose-td:text-gray-700
+                      prose-hr:my-8 prose-hr:border-gray-300"
                     dangerouslySetInnerHTML={{ __html: post.content }}
                   />
                 </div>
