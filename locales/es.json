@@ -196,11 +196,22 @@
   "bits": {
     "title": "Bits",
     "description": "Recursos prácticos, herramientas, tutoriales y fragmentos de código para potenciar tus proyectos de humanidades digitales.",
-    "categories": ["Todos", "Tutorial", "Recurso", "Herramienta", "Guía", "Código", "Plantilla"],
-    "access": "Acceder",
+    "searchPlaceholder": "Buscar recursos...",
+    "totalResources": "recursos disponibles",
+    "filteredResources": "recursos encontrados",
+    "readMore": "Leer más",
+    "loadMore": "Cargar más",
+    "remaining": "restantes",
+    "noResults": "No se encontraron recursos",
+    "noResultsDescription": "Intenta cambiar los filtros de búsqueda o usar términos diferentes.",
+    "clearFilters": "Limpiar filtros",
     "contribute_title": "Contribuye",
     "contribute_description": "¿Tienes herramientas, tutoriales o recursos que podrían ser útiles para la comunidad?",
     "contribute_button": "Comparte tu recurso",
+    "categories": {
+      "all": "Todos"
+    },
+    "access": "Acceder",
     "bits": [
       {
         "title": "Tutorial: Análisis de sentimientos con Python",

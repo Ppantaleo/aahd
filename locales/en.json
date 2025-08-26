@@ -196,11 +196,22 @@
   "bits": {
     "title": "Bits",
     "description": "Practical resources, tools, tutorials and code snippets to boost your digital humanities projects.",
-    "categories": ["All", "Tutorial", "Resource", "Tool", "Guide", "Code", "Template"],
-    "access": "Access",
+    "searchPlaceholder": "Search resources...",
+    "totalResources": "resources available",
+    "filteredResources": "resources found",
+    "readMore": "Read more",
+    "loadMore": "Load more",
+    "remaining": "remaining",
+    "noResults": "No resources found",
+    "noResultsDescription": "Try changing your search filters or using different terms.",
+    "clearFilters": "Clear filters",
     "contribute_title": "Contribute",
     "contribute_description": "Do you have tools, tutorials or resources that could be useful for the community?",
     "contribute_button": "Share your resource",
+    "categories": {
+      "all": "All"
+    },
+    "access": "Access",
     "bits": [
       {
         "title": "Tutorial: Sentiment Analysis with Python",
@@ -246,7 +257,7 @@
       }
     ]
   },
-
+  
   "podcast": {
     "title": "Podcast",
     "main_question": "Want to know who's doing Digital Humanities and how they're doing it?",
