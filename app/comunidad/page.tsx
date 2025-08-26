@@ -31,7 +31,7 @@ export default function ComunidadPage() {
             </div>
           </div>
 
-          {/* Tabla de miembros de la comunidad */}
+          {/* Tabla de miembros de la comunidad*/}
           <div className="bg-white rounded-lg p-8 shadow-sm">
             <h2 className="text-2xl font-bold text-slate-700 mb-6 text-center">{t.community.members_title}</h2>
             <p className="text-gray-600 mb-6 text-center">
