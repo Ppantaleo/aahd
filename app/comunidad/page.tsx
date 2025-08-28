@@ -33,9 +33,11 @@ export default function ComunidadPage() {
 
           {/* Nuevos miembros - Tabla vinculada al formulario */}
           <div className="bg-white rounded-lg p-8 shadow-sm mb-8">
-            <h2 className="text-2xl font-bold text-slate-700 mb-6 text-center">Nuevos miembros de la comunidad</h2>
+            <h2 className="text-2xl font-bold text-slate-700 mb-6 text-center">
+              {t.community.new_members_title}
+            </h2>
             <p className="text-gray-600 mb-6 text-center">
-              Miembros que se han unido recientemente a través del formulario de registro.
+              {t.community.new_members_description}
             </p>
 
             {/* Iframe con la nueva tabla de Google Sheets */}
@@ -49,18 +51,18 @@ export default function ComunidadPage() {
                 title="Nuevos miembros de la comunidad AAHD"
               >
                 {/* Fallback content */}
-                <p className="text-center text-gray-500 py-8">
-                  La tabla de nuevos miembros se cargará aquí. Si no puedes verla, por favor{" "}
-                  <Link 
-                    href="https://docs.google.com/spreadsheets/d/e/2PACX-1vTb90Fs6sC3Sxx6w4V2MJ4ht3M34QG9zPDB0OhYWyo4-Tbwzdt66TF9bH_EYoI3vCcF318-Q9yVy_QO/pubhtml" 
-                    className="text-cyan-600 hover:text-cyan-700"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    haz clic aquí
-                  </Link>{" "}
-                  para acceder directamente.
-                </p>
+               <p className="text-center text-gray-500 py-8">
+                {t.community.new_members_fallback_text}{" "}
+                <Link 
+                  href="https://docs.google.com/spreadsheets/d/e/2PACX-1vTb90Fs6sC3Sxx6w4V2MJ4ht3M34QG9zPDB0OhYWyo4-Tbwzdt66TF9bH_EYoI3vCcF318-Q9yVy_QO/pubhtml" 
+                  className="text-cyan-600 hover:text-cyan-700"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  {t.community.new_members_fallback_link}
+                </Link>{" "}
+                {t.community.new_members_fallback_suffix}
+              </p>
               </iframe>
             </div>
           </div>

@@ -102,7 +102,12 @@
     "members_description": "En esta tabla encontrarás los detalles de las personas que conforman nuestra comunidad, con una breve biografía y sus intereses.",
     "fallback_text": "La tabla de miembros se cargará aquí. Si no puedes verla, por favor",
     "fallback_link": "haz clic aquí",
-    "fallback_suffix": "para acceder directamente."
+    "fallback_suffix": "para acceder directamente.",
+    "new_members_title": "Nuevos miembros de la comunidad",
+    "new_members_description": "Miembros que se han unido recientemente a través del formulario de registro.",
+    "new_members_fallback_text": "La tabla de nuevos miembros se cargará aquí. Si no puedes verla, por favor",
+    "new_members_fallback_link": "haz clic aquí",
+    "new_members_fallback_suffix": "para acceder directamente."
   },
   "manifesto": {
     "title": "Manifiesto",
