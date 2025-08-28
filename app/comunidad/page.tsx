@@ -31,14 +31,48 @@ export default function ComunidadPage() {
             </div>
           </div>
 
-          {/* Tabla de miembros de la comunidad*/}
+          {/* Nuevos miembros - Tabla vinculada al formulario */}
+          <div className="bg-white rounded-lg p-8 shadow-sm mb-8">
+            <h2 className="text-2xl font-bold text-slate-700 mb-6 text-center">Nuevos miembros de la comunidad</h2>
+            <p className="text-gray-600 mb-6 text-center">
+              Miembros que se han unido recientemente a través del formulario de registro.
+            </p>
+
+            {/* Iframe con la nueva tabla de Google Sheets */}
+            <div className="w-full">
+              <iframe
+                src="https://docs.google.com/spreadsheets/d/e/2PACX-1vTb90Fs6sC3Sxx6w4V2MJ4ht3M34QG9zPDB0OhYWyo4-Tbwzdt66TF9bH_EYoI3vCcF318-Q9yVy_QO/pubhtml"
+                width="100%"
+                height="600"
+                frameBorder="0"
+                className="border rounded-lg"
+                title="Nuevos miembros de la comunidad AAHD"
+              >
+                {/* Fallback content */}
+                <p className="text-center text-gray-500 py-8">
+                  La tabla de nuevos miembros se cargará aquí. Si no puedes verla, por favor{" "}
+                  <Link 
+                    href="https://docs.google.com/spreadsheets/d/e/2PACX-1vTb90Fs6sC3Sxx6w4V2MJ4ht3M34QG9zPDB0OhYWyo4-Tbwzdt66TF9bH_EYoI3vCcF318-Q9yVy_QO/pubhtml" 
+                    className="text-cyan-600 hover:text-cyan-700"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    haz clic aquí
+                  </Link>{" "}
+                  para acceder directamente.
+                </p>
+              </iframe>
+            </div>
+          </div>
+
+          {/* Miembros históricos - Tabla original */}
           <div className="bg-white rounded-lg p-8 shadow-sm">
             <h2 className="text-2xl font-bold text-slate-700 mb-6 text-center">{t.community.members_title}</h2>
             <p className="text-gray-600 mb-6 text-center">
               {t.community.members_description}
             </p>
 
-            {/* Iframe con la tabla de Google Sheets */}
+            {/* Iframe con la tabla original de Google Sheets */}
             <div className="w-full">
               <iframe
                 src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSUGiZlsLSa3OZQSBByKmIO9HAxCxwjljotfe1LPdA5UoCRfYEAkQNaonIALFM7ZJuj-nQoT04nXPcn/pubhtml?gid=213142222&single=true"
