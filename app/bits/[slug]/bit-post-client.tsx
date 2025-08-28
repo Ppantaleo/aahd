@@ -41,18 +41,26 @@ export default function BitPostClient({ post }: BitPostClientProps) {
     setMounted(true)
   }, [])
 
+  // Generar TOC después de que el contenido esté montado
   useEffect(() => {
     if (!mounted || !contentRef.current) return
 
+    const observer = new MutationObserver(() => {
+      generateTableOfContents()
+    })
+
     const generateTableOfContents = () => {
-      const headings = contentRef.current?.querySelectorAll('h1, h2, h3, h4, h5, h6')
+      if (!contentRef.current) return
+
+      const headings = contentRef.current.querySelectorAll('h1, h2, h3, h4, h5, h6')
       
-      if (!headings || headings.length === 0) return
+      if (headings.length === 0) return
 
       const toc: TocItem[] = Array.from(headings).map((heading, index) => {
         const id = `heading-${index}`
         heading.id = id
-        heading.scrollMarginTop = '100px' // Espacio para el header fijo
+        // Agregar scroll margin para el offset del header
+        heading.style.scrollMarginTop = '100px'
         
         const level = parseInt(heading.tagName.charAt(1))
         const text = heading.textContent || ''
@@ -63,10 +71,17 @@ export default function BitPostClient({ post }: BitPostClientProps) {
       setTableOfContents(toc)
     }
 
-    // Delay para asegurar que el DOM esté completamente renderizado
-    const timer = setTimeout(generateTableOfContents, 200)
-    return () => clearTimeout(timer)
-  }, [mounted, post.content])
+    // Generar TOC inicialmente
+    generateTableOfContents()
+
+    // Observer para cambios en el DOM
+    observer.observe(contentRef.current, {
+      childList: true,
+      subtree: true
+    })
+
+    return () => observer.disconnect()
+  }, [mounted])
 
   const handleShare = async () => {
     if (!mounted) return
@@ -108,12 +123,18 @@ export default function BitPostClient({ post }: BitPostClientProps) {
     }
   }
 
-  const scrollToHeading = (id: string) => {
+  const scrollToHeading = (e: React.MouseEvent, id: string) => {
+    e.preventDefault()
     const element = document.getElementById(id)
     if (element) {
-      const yOffset = -80 // Offset para el header
-      const y = element.getBoundingClientRect().top + window.pageYOffset + yOffset
-      window.scrollTo({ top: y, behavior: 'smooth' })
+      const rect = element.getBoundingClientRect()
+      const scrollTop = window.pageYOffset || document.documentElement.scrollTop
+      const targetPosition = rect.top + scrollTop - 100 // 100px offset para el header
+      
+      window.scrollTo({
+        top: targetPosition,
+        behavior: 'smooth'
+      })
     }
   }
 
@@ -183,19 +204,19 @@ export default function BitPostClient({ post }: BitPostClientProps) {
                     </h3>
                     <nav className="space-y-2">
                       {tableOfContents.map((item) => (
-                        <button
+                        <a
                           key={item.id}
-                          onClick={() => scrollToHeading(item.id)}
-                          className={`block text-left w-full text-sm text-gray-600 hover:text-cyan-600 transition-colors py-1 ${
-                            item.level === 1 ? '' :
+                          href={`#${item.id}`}
+                          onClick={(e) => scrollToHeading(e, item.id)}
+                          className={`block text-sm text-gray-600 hover:text-cyan-600 transition-colors py-1 no-underline ${
+                            item.level === 1 ? 'font-medium' :
                             item.level === 2 ? 'ml-2' :
                             item.level === 3 ? 'ml-4' :
                             'ml-6'
                           }`}
-                          style={{ textAlign: 'left' }}
                         >
                           {item.text}
-                        </button>
+                        </a>
                       ))}
                     </nav>
                   </div>
@@ -319,6 +340,15 @@ export default function BitPostClient({ post }: BitPostClientProps) {
           font-weight: 500;
           color: #4b5563;
           margin: 1.25rem 0 0.5rem 0;
+          scroll-margin-top: 100px;
+        }
+
+        .markdown-content h5,
+        .markdown-content h6 {
+          font-size: 1.125rem;
+          font-weight: 500;
+          color: #4b5563;
+          margin: 1rem 0 0.5rem 0;
           scroll-margin-top: 100px;
         }
 
