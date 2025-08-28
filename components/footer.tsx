@@ -1,6 +1,5 @@
 "use client"
 
-import Link from "next/link"
 import { Facebook, Twitter, Youtube, Mail } from "lucide-react"
 import { useTranslations } from "@/lib/translations"
 
@@ -20,24 +19,24 @@ export default function Footer() {
             <h4 className="font-semibold mb-4">{t.footer.navigation}</h4>
             <ul className="space-y-2 text-sm">
               <li>
-                <Link href="/about" className="text-gray-300 hover:text-white">
+                <a href="/about" className="text-gray-300 hover:text-white no-underline">
                   {t.nav.about}
-                </Link>
+                </a>
               </li>
               <li>
-                <Link href="/comunidad" className="text-gray-300 hover:text-white">
+                <a href="/comunidad" className="text-gray-300 hover:text-white no-underline">
                   {t.nav.community}
-                </Link>
+                </a>
               </li>
               <li>
-                <Link href="/manifiesto" className="text-gray-300 hover:text-white">
+                <a href="/manifiesto" className="text-gray-300 hover:text-white no-underline">
                   {t.nav.manifesto}
-                </Link>
+                </a>
               </li>
               <li>
-                <Link href="/publicaciones" className="text-gray-300 hover:text-white">
+                <a href="/publicaciones" className="text-gray-300 hover:text-white no-underline">
                   {t.nav.publications}
-                </Link>
+                </a>
               </li>
             </ul>
           </div>
@@ -46,19 +45,19 @@ export default function Footer() {
             <h4 className="font-semibold mb-4">{t.footer.resources}</h4>
             <ul className="space-y-2 text-sm">
               <li>
-                <Link href="/podcast" className="text-gray-300 hover:text-white">
+                <a href="/podcast" className="text-gray-300 hover:text-white no-underline">
                   {t.nav.podcast}
-                </Link>
+                </a>
               </li>
               <li>
-                <Link href="/bits" className="text-gray-300 hover:text-white">
+                <a href="/bits" className="text-gray-300 hover:text-white no-underline">
                   {t.nav.bits}
-                </Link>
+                </a>
               </li>
               <li>
-                <Link href="/contacto" className="text-gray-300 hover:text-white">
+                <a href="/contacto" className="text-gray-300 hover:text-white no-underline">
                   {t.nav.contact}
-                </Link>
+                </a>
               </li>
             </ul>
           </div>
@@ -66,30 +65,36 @@ export default function Footer() {
           <div>
             <h4 className="font-semibold mb-4">{t.footer.follow}</h4>
             <div className="flex space-x-3">
-              <Link
+              <a
                 href="http://twitter.com/aahdArg"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="w-8 h-8 bg-cyan-500 rounded-full flex items-center justify-center hover:bg-cyan-600 transition-colors"
               >
                 <Twitter className="w-4 h-4" />
-              </Link>
-              <Link
+              </a>
+              <a
                 href="https://www.facebook.com/aahdArg/"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="w-8 h-8 bg-cyan-500 rounded-full flex items-center justify-center hover:bg-cyan-600 transition-colors"
               >
                 <Facebook className="w-4 h-4" />
-              </Link>
-              <Link
+              </a>
+              <a
                 href="https://www.youtube.com/channel/UCVw7jhPkN0URG92Abnvs5MA"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="w-8 h-8 bg-cyan-500 rounded-full flex items-center justify-center hover:bg-cyan-600 transition-colors"
               >
                 <Youtube className="w-4 h-4" />
-              </Link>
-              <Link
+              </a>
+              <a
                 href="mailto:hdargentina13@gmail.com"
                 className="w-8 h-8 bg-cyan-500 rounded-full flex items-center justify-center hover:bg-cyan-600 transition-colors"
               >
                 <Mail className="w-4 h-4" />
-              </Link>
+              </a>
             </div>
           </div>
         </div>
