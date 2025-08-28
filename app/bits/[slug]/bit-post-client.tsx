@@ -1,7 +1,6 @@
 "use client"
 
 import { useState, useEffect, useRef } from "react"
-import Link from "next/link"
 import { ArrowLeft, Calendar, Clock, User, Tag, Share2 } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
@@ -144,13 +143,13 @@ export default function BitPostClient({ post }: BitPostClientProps) {
       <div className="bg-slate-700 text-white py-16">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
-            <Link 
+            <a 
               href="/bits" 
-              className="inline-flex items-center text-cyan-300 hover:text-cyan-200 mb-6"
+              className="inline-flex items-center text-cyan-300 hover:text-cyan-200 mb-6 no-underline"
             >
               <ArrowLeft className="w-4 h-4 mr-2" />
               Volver a Bits
-            </Link>
+            </a>
 
             <div className="mb-4">
               <Badge variant="secondary" className="mb-4">
@@ -290,12 +289,12 @@ export default function BitPostClient({ post }: BitPostClientProps) {
 
               {/* Navegación a otros posts */}
               <div className="mt-8 text-center">
-                <Link href="/bits">
+                <a href="/bits" className="no-underline">
                   <Button variant="outline" size="lg">
                     <ArrowLeft className="w-4 h-4 mr-2" />
                     Volver a Bits
                   </Button>
-                </Link>
+                </a>
               </div>
             </div>
           </div>
